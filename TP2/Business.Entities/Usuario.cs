@@ -63,7 +63,7 @@ namespace Business.Entities
             }
         }
 
-        public string Email
+        public string EMail
         {
             get
             {
