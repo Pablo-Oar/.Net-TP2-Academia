@@ -1,6 +1,5 @@
-C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Entities\obj\Debug\Business.Entities.csprojAssemblyReference.cache
-C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Entities\obj\Debug\Business.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Entities\bin\Debug\Business.Entities.dll
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Entities\bin\Debug\Business.Entities.pdb
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Entities\obj\Debug\Business.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Entities\obj\Debug\Business.Entities.dll
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Entities\obj\Debug\Business.Entities.pdb

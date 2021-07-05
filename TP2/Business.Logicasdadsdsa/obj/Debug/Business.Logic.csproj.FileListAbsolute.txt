@@ -1,0 +1,2 @@
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csprojAssemblyReference.cache
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CoreCompileInputs.cache
