@@ -26,7 +26,7 @@ namespace Business.Logic
 
         public UsuarioLogic()
         {
-            this._UsuarioData = UsuarioData.New;
+            this._UsuarioData = new Data.Database.UsuarioAdapter();
         }
 
         public List<Usuario> GetAll()
