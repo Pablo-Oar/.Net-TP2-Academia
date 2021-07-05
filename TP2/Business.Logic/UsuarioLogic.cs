@@ -27,25 +27,25 @@ namespace Business.Logic
 
         public UsuarioLogic()
         {
-            this._UsuarioData = new Data.Database.UsuarioAdapter();
+            this.UsuarioData = new Data.Database.UsuarioAdapter();
         }
 
         public List<Usuario> GetAll()
         {
-            return _UsuarioData.GetAll();
+            return UsuarioData.GetAll();
         }
 
         public Usuario GetOne(int IdUsuario)
         {
-            return _UsuarioData.GetOne(IdUsuario);
+            return UsuarioData.GetOne(IdUsuario);
         }
         public void delete(int IdUsuario)
         {
-            _UsuarioData.Delete(IdUsuario);
+            UsuarioData.Delete(IdUsuario);
         }
         public void Save(Usuario User)
         {
-            _UsuarioData.Save(User);
+            UsuarioData.Save(User);
         }
     }
 }
