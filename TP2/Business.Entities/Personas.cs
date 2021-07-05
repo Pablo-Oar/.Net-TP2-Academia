@@ -16,7 +16,7 @@ namespace Business.Entities
         private int _Legajo;
         private string _Telefono;
         private DateTime _FechaNacimiento;
-        private TiposPersonas _TipoPersona;
+        //private TiposPersonas _TipoPersona;
 
         public int Legajo
         {
@@ -112,17 +112,17 @@ namespace Business.Entities
             }
         }
 
-        public TiposPersonas TipoPersona
-        {
-            get
-            {
-                return _TipoPersona;
-            }
-            set
-            {
-                _TipoPersona = value;
-            }
-        }
+        //public TiposPersonas TipoPersona
+        //{
+        //    get
+        //    {
+        //        return _TipoPersona;
+        //    }
+        //    set
+        //    {
+        //        _TipoPersona = value;
+        //    }
+        //}
 
     }
 }
