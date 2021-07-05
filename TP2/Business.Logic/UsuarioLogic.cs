@@ -31,7 +31,20 @@ namespace Business.Logic
 
         public List<Usuario> GetAll()
         {
+            return _UsuarioData.GetAll();
+        }
 
+        public Usuario GetOne(int IdUsuario)
+        {
+            return _UsuarioData.GetOne(IdUsuario);
+        }
+        public void delete(int IdUsuario)
+        {
+            _UsuarioData.Delete(IdUsuario);
+        }
+        public void Save(Usuario User)
+        {
+            _UsuarioData.Save(User);
         }
 
 
