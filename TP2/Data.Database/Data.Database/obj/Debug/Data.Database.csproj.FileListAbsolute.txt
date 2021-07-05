@@ -1,6 +1,5 @@
-C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.csprojAssemblyReference.cache
-C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
+C:\Net\TP2\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.csprojAssemblyReference.cache
+C:\Net\TP2\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.csproj.CoreCompileInputs.cache
 C:\Net\TP2\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.csprojAssemblyReference.cache
 C:\Net\TP2\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.csproj.CoreCompileInputs.cache
 C:\Net\TP2\TP2\Data.Database\Data.Database\bin\Debug\Data.Database.dll

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojAssemblyReference.cache
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.cache

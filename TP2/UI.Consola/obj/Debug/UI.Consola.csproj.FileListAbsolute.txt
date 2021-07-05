@@ -1,5 +1,4 @@
-C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Consola\obj\Debug\UI.Consola.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
+C:\Net\TP2\TP2\UI.Consola\obj\Debug\UI.Consola.csproj.CoreCompileInputs.cache
 C:\Net\TP2\TP2\UI.Consola\obj\Debug\UI.Consola.csprojAssemblyReference.cache
 C:\Net\TP2\TP2\UI.Consola\obj\Debug\UI.Consola.csproj.CoreCompileInputs.cache
 =======
@@ -17,3 +16,15 @@ C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Consola\obj\Debug\UI.Consola.csp
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Consola\obj\Debug\UI.Consola.exe
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Consola\obj\Debug\UI.Consola.pdb
 >>>>>>> 3e1a49cb33f4ea600087d2d706cc10e6f951489c
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\UI.Consola.exe.config
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\UI.Consola.exe
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\UI.Consola.pdb
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\Business.Entities.dll
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\Business.Logic.dll
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\Data.Database.dll
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\Business.Entities.pdb
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\Business.Logic.pdb
+C:\Net\TP2\TP2\UI.Consola\bin\Debug\Data.Database.pdb
+C:\Net\TP2\TP2\UI.Consola\obj\Debug\UI.Consola.csproj.CopyComplete
+C:\Net\TP2\TP2\UI.Consola\obj\Debug\UI.Consola.exe
+C:\Net\TP2\TP2\UI.Consola\obj\Debug\UI.Consola.pdb

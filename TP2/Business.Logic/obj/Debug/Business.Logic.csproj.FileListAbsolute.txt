@@ -1,5 +1,4 @@
-C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
+C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CoreCompileInputs.cache
 C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csprojAssemblyReference.cache
 C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CoreCompileInputs.cache
 C:\Net\TP2\TP2\Business.Logic\bin\Debug\Business.Logic.dll
