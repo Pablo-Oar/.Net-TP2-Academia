@@ -39,7 +39,7 @@ namespace Business.Logic
         {
             return UsuarioData.GetOne(IdUsuario);
         }
-        public void delete(int IdUsuario)
+        public void Delete(int IdUsuario)
         {
             UsuarioData.Delete(IdUsuario);
         }

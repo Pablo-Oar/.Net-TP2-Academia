@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            new Usuario().menu();
+            new Usuario().Menu();
         }
 
     }
