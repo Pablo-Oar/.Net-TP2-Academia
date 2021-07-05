@@ -12,7 +12,7 @@ namespace UI.Consola
     {
         private UsuarioLogic _UsuarioNegocio;       
 
-        public void menu()
+        public void Menu()
         { int opc;
             do
             {
@@ -35,6 +35,7 @@ namespace UI.Consola
                         Modificar();
                         break;
                     case 5:
+                        Eliminar();
                         break;
                     case 6:
                         break;
@@ -95,7 +96,7 @@ namespace UI.Consola
                 usuario.Habilitado = (Console.ReadLine() == "1");
                 usuario.State = BusinessEntity.States.New;
                 UsuarioNegocio.Save(usuario);
-                Console.WriteLine("ID: {}", usuario.ID);   
+                Console.WriteLine("ID: {0}", usuario.ID);   
                 Console.WriteLine("Presione una tecla para continuar");
                 Console.ReadKey();
         }
@@ -135,6 +136,31 @@ namespace UI.Consola
                 Console.WriteLine("Presione una tecla para continuar");
                 Console.ReadKey();
                 
+            }
+        }
+
+        public void Eliminar()
+        {
+            try
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese el ID del usuario a eliminar: ");
+                int ID = Convert.ToInt32(Console.ReadLine());
+                UsuarioNegocio.Delete(ID);
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine("La ID ingresada debe ser un numero entero");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+            }
+            finally
+            {
+                Console.WriteLine("Presione una tecla para continuar");
+                Console.ReadKey();
             }
         }
 
