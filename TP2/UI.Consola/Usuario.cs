@@ -20,6 +20,7 @@ namespace UI.Consola
             switch (opc)
             {
                 case 1:
+                    ListadoGeneral();
                     break;
                 case 2:
                     break;
@@ -53,7 +54,7 @@ namespace UI.Consola
             Console.WriteLine("\t\tClave: {0}", us.Clave);
             Console.WriteLine("\t\tEmail: {0}", us.EMail);
             Console.WriteLine("\t\tHabilitado: {0}", us.Habilitado);
-            Console.WriteLine();
+            Console.ReadKey();
         }
 
         public UsuarioLogic UsuarioNegocio

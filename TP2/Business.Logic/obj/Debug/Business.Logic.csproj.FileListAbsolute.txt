@@ -1,5 +1,5 @@
-C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csprojAssemblyReference.cache
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
 C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csprojAssemblyReference.cache
 C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CoreCompileInputs.cache
 C:\Net\TP2\TP2\Business.Logic\bin\Debug\Business.Logic.dll
@@ -11,3 +11,15 @@ C:\Net\TP2\TP2\Business.Logic\bin\Debug\Data.Database.pdb
 C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CopyComplete
 C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.dll
 C:\Net\TP2\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+=======
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\bin\Debug\Business.Logic.dll
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\bin\Debug\Business.Logic.pdb
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\bin\Debug\Business.Entities.dll
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\bin\Debug\Data.Database.dll
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\bin\Debug\Business.Entities.pdb
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\bin\Debug\Data.Database.pdb
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csprojAssemblyReference.cache
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.csproj.CopyComplete
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.dll
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\Business.Logic\obj\Debug\Business.Logic.pdb
+>>>>>>> 3e1a49cb33f4ea600087d2d706cc10e6f951489c

@@ -8,8 +8,9 @@ using System.Data;
 
 namespace Business.Logic
 {
-    public class UsuarioLogic: BusinessLogic
+    public class UsuarioLogic
     {
+
         private Data.Database.UsuarioAdapter _UsuarioData;
 
         public Data.Database.UsuarioAdapter UsuarioData
@@ -46,8 +47,5 @@ namespace Business.Logic
         {
             _UsuarioData.Save(User);
         }
-
-
-
     }
 }

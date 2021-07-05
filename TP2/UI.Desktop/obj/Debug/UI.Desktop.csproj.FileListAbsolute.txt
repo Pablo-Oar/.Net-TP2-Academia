@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojAssemblyReference.cache
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.cache
@@ -14,3 +15,17 @@ C:\Net\TP2\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.CopyComplete
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+=======
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\bin\Debug\Business.Entities.dll
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\bin\Debug\Business.Entities.pdb
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojAssemblyReference.cache
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.cache
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.CoreCompileInputs.cache
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.CopyComplete
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+>>>>>>> 3e1a49cb33f4ea600087d2d706cc10e6f951489c
