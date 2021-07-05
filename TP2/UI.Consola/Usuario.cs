@@ -166,6 +166,7 @@ namespace UI.Consola
         public Usuario()
         {
             this._UsuarioNegocio = new UsuarioLogic();
+           
         }
     }
 }
