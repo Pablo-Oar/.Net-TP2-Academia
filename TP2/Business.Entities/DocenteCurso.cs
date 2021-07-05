@@ -13,7 +13,7 @@ namespace Business.Entities
         private int _IDDocente;
 
         public int IDDocente
-        {
+        { 
             get
             {
                 return _IDDocente;
