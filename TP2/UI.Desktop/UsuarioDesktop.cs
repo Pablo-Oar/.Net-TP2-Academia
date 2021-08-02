@@ -34,13 +34,22 @@ namespace UI.Desktop
             UsuarioActual= user.GetOne(ID); ;
             MapearDeDatos();
         }
-        public virtual void MapearDeDatos() {
+        public override void MapearDeDatos() {
+            this.txtId.Text = this.UsuarioActual.ID.ToString();
+            this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
+            this.txtNombre.Text = this.UsuarioActual.Nombre;
+            this.txtEmail.Text = this.UsuarioActual.EMail;
+            this.txtClave.Text = this.UsuarioActual.Clave;
+            this.txtApellido.Text = this.UsuarioActual.Apellido;
+            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+        }
+        public override void MapearADatos() {
             if (this.Modo == ModoForm.Alta)
             {
                 this.btnAceptar.Text = "Guardar";
                 Usuario newUser = new Usuario();
                 UsuarioActual = newUser;
-
+                MessageBox.Show("creado usuarioactual");
             }
             if (this.Modo == ModoForm.Baja)
             {
@@ -54,13 +63,16 @@ namespace UI.Desktop
             {
                 this.btnAceptar.Text = "Aceptar";
             }
-            this.txtId.Text = this.UsuarioActual.ID.ToString();
-            this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtNombre.Text = this.UsuarioActual.Nombre;
-            this.txtEmail.Text = this.UsuarioActual.EMail;
-            this.txtClave.Text = this.UsuarioActual.Clave;
-            this.txtApellido.Text = this.UsuarioActual.Apellido;
-            this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;            
+            if (this.Modo != ModoForm.Alta)
+            {
+                this.UsuarioActual.ID = Convert.ToInt32(this.txtId.Text);
+            }
+            this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+            this.UsuarioActual.Nombre = this.txtNombre.Text;
+            this.UsuarioActual.EMail = this.txtEmail.Text;
+            this.UsuarioActual.Clave = this.txtClave.Text;
+            this.UsuarioActual.Apellido = this.txtApellido.Text;
+            this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
             if (this.Modo == ModoForm.Alta)
             {
                 this.UsuarioActual.State = Usuario.States.New;
@@ -79,24 +91,29 @@ namespace UI.Desktop
             }
 
         }
-        public virtual void MapearADatos() { }
-        public virtual void GuardarCambios() {
-            MapearADatos();
+        public override void GuardarCambios() {
+            this.MapearADatos();
             UsuarioLogic ul = new UsuarioLogic();
-            ul.Save(UsuarioActual);
+            ul.Save(this.UsuarioActual);
         }
-        public virtual bool Validar() {
-            if (this.txtNombre.Text == "" &&
-            this.txtEmail.Text == "" &&
-            this.txtClave.Text == "" &&
-            this.txtApellido.Text == "" &&
-            this.txtUsuario.Text == "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length < 7 && Regex.IsMatch(this.txtEmail.Text, @"/^[^\s@]+@[^\s@]+\.[^\s@]+$/"))
+        public override bool Validar() {
+            MessageBox.Show("entro en validar");
+             if (this.txtNombre.Text != "" &&
+            txtEmail.Text != "" &&
+            this.txtClave.Text != "" &&
+            this.txtApellido.Text != "" &&
+            this.txtUsuario.Text != "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length > 7 )//&& Regex.IsMatch(this.txtEmail.Text, @"/^[^\s@]+@[^\s@]+\.[^\s@]+$/"))
             {
-                System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();                
-                System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
-                Notificar("Error","Datos invalidos",boton,icono); // ----------------------- no se como pasar botones de parametros, revisar tema id que a veces va y a veces no
+                MessageBox.Show("valida ok");               
                 return true;
-            } else return false;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();
+                System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
+                Notificar("Error", "Datos invalidos", boton, icono); // ----------------------- no se como pasar botones de parametros, revisar tema id que a veces va y a veces no
+                return false;
+            }
         }
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
@@ -131,6 +148,7 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("clickkk");
             if (Validar())
             {
                 GuardarCambios();

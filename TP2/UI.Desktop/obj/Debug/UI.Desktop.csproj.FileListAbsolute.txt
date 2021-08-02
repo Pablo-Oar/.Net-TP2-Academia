@@ -32,3 +32,5 @@ C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csp
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.CopyComplete
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
 C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.ApplicationForm.resources
+C:\Users\Herni\Documents\UTN\net\Net-TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.UsuarioDesktop.resources
