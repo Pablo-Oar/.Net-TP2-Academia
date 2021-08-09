@@ -10,3 +10,8 @@ C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.CoreCompileInputs.cache
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.CopyComplete
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
 C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Net\TP2\TP2\UI.Desktop\bin\Debug\Business.Logic.dll
+C:\Net\TP2\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Net\TP2\TP2\UI.Desktop\bin\Debug\Business.Logic.pdb
+C:\Net\TP2\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Net\TP2\TP2\UI.Desktop\obj\Debug\UI.Desktop.Usuarios.resources
