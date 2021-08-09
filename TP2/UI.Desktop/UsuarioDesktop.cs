@@ -24,7 +24,7 @@ namespace UI.Desktop
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
-            ModoForm ModoForm = modo; //No se si de esta manera esta bien... punto 11 Lab04 - Formulario ABMC
+            ModoForm ModoForm = modo; //No se si de esta manera esta bien... punto 10 Lab04 - Formulario ABMC
         }
 
         public UsuarioDesktop(int ID, ModoForm modo) : this() //Terminar punto 12.
