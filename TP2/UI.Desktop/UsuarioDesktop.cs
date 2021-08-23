@@ -25,7 +25,7 @@ namespace UI.Desktop
             Business.Logic.UsuarioLogic user = new Business.Logic.UsuarioLogic();
             UsuarioActual = user.GetOne(ID);            
             MapearDeDatos();
-            MapearADatos();
+            MapearADatos(); ;
         }
         public override void MapearDeDatos()
         {
