@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Business.Entities;
 using Business.Logic;
-using Business.Entities;
-using System.Text.RegularExpressions;
+using System;
+using System.Windows.Forms;
 
 namespace UI.Desktop
 {
@@ -24,17 +16,19 @@ namespace UI.Desktop
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
-            this.Modo = modo; 
+            this.Modo = modo;
         }
 
         public UsuarioDesktop(int ID, ModoForm modo) : this() //Terminar punto 12.
         {
-            ModoForm ModoForm = modo;
+            this.Modo = modo;
             Business.Logic.UsuarioLogic user = new Business.Logic.UsuarioLogic();
-            UsuarioActual= user.GetOne(ID); ;
+            UsuarioActual = user.GetOne(ID);            
             MapearDeDatos();
+            MapearADatos();
         }
-        public override void MapearDeDatos() {
+        public override void MapearDeDatos()
+        {
             this.txtId.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtNombre.Text = this.UsuarioActual.Nombre;
@@ -43,7 +37,8 @@ namespace UI.Desktop
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
         }
-        public override void MapearADatos() {
+        public override void MapearADatos()
+        {
             if (this.Modo == ModoForm.Alta)
             {
                 this.btnAceptar.Text = "Guardar";
@@ -91,20 +86,36 @@ namespace UI.Desktop
             }
 
         }
-        public override void GuardarCambios() {
-            this.MapearADatos();
-            UsuarioLogic ul = new UsuarioLogic();
-            ul.Save(this.UsuarioActual);
-        }
-        public override bool Validar() {
-            MessageBox.Show("entro en validar");
-             if (this.txtNombre.Text != "" &&
-            txtEmail.Text != "" &&
-            this.txtClave.Text != "" &&
-            this.txtApellido.Text != "" &&
-            this.txtUsuario.Text != "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length > 7 )//&& Regex.IsMatch(this.txtEmail.Text, @"/^[^\s@]+@[^\s@]+\.[^\s@]+$/"))
+        public override void GuardarCambios()
+        {
+            if (this.Modo == ModoForm.Alta)
             {
-                MessageBox.Show("valida ok");               
+                this.MapearADatos();
+                UsuarioLogic ul = new UsuarioLogic();
+                ul.Save(this.UsuarioActual);
+            }
+            else if (this.Modo == ModoForm.Modificacion)
+            {
+                this.MapearADatos();
+                UsuarioLogic ul = new UsuarioLogic();
+                ul.Save(this.UsuarioActual);
+            }
+            else if (this.Modo == ModoForm.Baja)
+            {
+                this.MapearADatos();
+                UsuarioLogic ul = new UsuarioLogic();
+                ul.Save(this.UsuarioActual);
+            }
+        }
+        public override bool Validar()
+        {
+            if (this.txtNombre.Text != "" &&
+           txtEmail.Text != "" &&
+           this.txtClave.Text != "" &&
+           this.txtApellido.Text != "" &&
+           this.txtUsuario.Text != "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length > 7)//&& Regex.IsMatch(this.txtEmail.Text, @"/^[^\s@]+@[^\s@]+\.[^\s@]+$/"))
+            {
+                //MessageBox.Show("valida ok");
                 return true;
             }
             else
@@ -148,12 +159,15 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("clickkk");
-            if (Validar())
+            if(this.Modo == ModoForm.Baja)
             {
                 GuardarCambios();
                 Close();
-            }
+            }else if (Validar())
+                {
+                    GuardarCambios();
+                    Close();
+                }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

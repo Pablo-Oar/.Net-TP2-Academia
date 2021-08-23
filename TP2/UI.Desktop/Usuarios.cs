@@ -65,7 +65,31 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-           
+            if(this.dgvUsuarios.SelectedRows.Count > 0){ 
+                int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                UD.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para editar un registro");
+            }
         }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvUsuarios.SelectedRows.Count > 0)
+            {
+                int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
+                UD.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para eliminar un registro");
+            }
+        }       
     }
 }
