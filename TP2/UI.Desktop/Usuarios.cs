@@ -51,5 +51,17 @@ namespace UI.Desktop
             set { _oUsuarios = value; }
         }
 
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop UD = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            UD.ShowDialog();
+            this.Listar();
+        }
+
     }
 }
