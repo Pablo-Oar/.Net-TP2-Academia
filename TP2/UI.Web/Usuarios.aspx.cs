@@ -148,5 +148,28 @@ namespace UI.Web
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
+
+        private void EnableForm (bool enable)
+        {
+            this.nombreTextBox.Enabled = enable;
+            this.apellidoTextBox.Enabled = enable;
+            this.emailTextBox.Enabled = enable;
+            this.nombreUsuarioTextBox.Enabled = enable;
+            this.claveTextBox.Visible = enable;
+            this.claveLabel.Visible = enable;
+            this.repetirClaveTextBox.Visible = enable;
+            this.repetirClaveLabel.Visible = enable;
+        }
+
+        protected void eliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            if (this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Baja;
+                this.EnableForm(false);
+                this.LoadForm(this.SelectedID);
+            }
+        }
     }
 }
