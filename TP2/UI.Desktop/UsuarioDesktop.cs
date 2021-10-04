@@ -107,12 +107,6 @@ namespace UI.Desktop
                 ul.Save(this.UsuarioActual);
             }
         }
-<<<<<<< HEAD
-        public override bool Validar() {
-            MessageBox.Show("entro en validar");
-             if (this.txtNombre.Text != "" && txtEmail.Text != "" && this.txtClave.Text != "" && this.txtApellido.Text != "" &&
-            this.txtUsuario.Text != "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length > 7 )//&& Regex.IsMatch(this.txtEmail.Text, @"/^[^\s@]+@[^\s@]+\.[^\s@]+$/"))
-=======
         public override bool Validar()
         {
             if (this.txtNombre.Text != "" &&
@@ -120,7 +114,6 @@ namespace UI.Desktop
            this.txtClave.Text != "" &&
            this.txtApellido.Text != "" &&
            this.txtUsuario.Text != "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length > 7)//&& Regex.IsMatch(this.txtEmail.Text, @"/^[^\s@]+@[^\s@]+\.[^\s@]+$/"))
->>>>>>> 6fdcbc3888a2b334e24767b18e46808815ab7754
             {
                 //MessageBox.Show("valida ok");
                 return true;

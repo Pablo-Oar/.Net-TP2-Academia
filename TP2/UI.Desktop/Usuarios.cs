@@ -63,8 +63,6 @@ namespace UI.Desktop
             this.Listar();
         }
 
-<<<<<<< HEAD
-=======
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if(this.dgvUsuarios.SelectedRows.Count > 0){ 
@@ -93,6 +91,5 @@ namespace UI.Desktop
                 MessageBox.Show("Seleccione una fila para eliminar un registro");
             }
         }       
->>>>>>> 6fdcbc3888a2b334e24767b18e46808815ab7754
     }
 }
