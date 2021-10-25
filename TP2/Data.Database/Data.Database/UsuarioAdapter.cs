@@ -167,6 +167,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
 
+                cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
@@ -185,7 +186,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email)"+
-                    "VALUES( @nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email SELECT @@identity", SqlConn);
+                    "VALUES(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) SELECT @@identity", SqlConn);
 
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
