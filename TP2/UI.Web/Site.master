@@ -4,7 +4,7 @@
 <head runat="server">
     <title>Academia</title>
 </head>
-<body>
+<body style="background-color:lightgray">
     <form id="bodyForm" runat="server">
         <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource" BackColor="#0066CC" ForeColor="Black" Orientation="Horizontal" Width="65px"></asp:Menu>
         <asp:SiteMapDataSource ID="SiteMapDataSource"  runat="server"></asp:SiteMapDataSource>
