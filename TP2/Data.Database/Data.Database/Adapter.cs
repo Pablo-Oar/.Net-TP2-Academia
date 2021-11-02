@@ -9,14 +9,21 @@ namespace Data.Database
 {
     public class Adapter
     {
+        public tp2_netEntities _EfConn;
         const string consKeyDefaultCnnString = "ConnStringExpress";
 
         private SqlConnection _sqlConn;
+
 
         public SqlConnection SqlConn
         {
             get { return _sqlConn; }
             set { _sqlConn = value; }
+        }
+
+        public Adapter()
+        {
+            _EfConn = new tp2_netEntities();
         }
 
         protected void OpenConnection()

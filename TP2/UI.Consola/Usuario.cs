@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Entities;
 using Business.Logic;
+using Data.Database;
 
 namespace UI.Consola
 {
@@ -13,7 +14,9 @@ namespace UI.Consola
         private UsuarioLogic _UsuarioNegocio;       
 
         public void Menu()
-        { int opc;
+        {
+            new PersonasAdapter().GetAll();
+            int opc;
             do
             {
                 Console.Clear();

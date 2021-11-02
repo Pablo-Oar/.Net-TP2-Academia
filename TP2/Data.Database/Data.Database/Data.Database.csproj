@@ -39,21 +39,110 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter.cs" />
+    <Compile Include="alumnos_inscripciones.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="comisiones.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cursos.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="docentes_cursos.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFPersonas.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFPersonas.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFPersonas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFPersonas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFPersonas.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="especialidades.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="materias.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modulos.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modulos_usuarios.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="personas.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonasAdapter.cs" />
+    <Compile Include="planes.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="usuarios.cs">
+      <DependentUpon>EFPersonas.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business.Entities\Business.Entities.csproj">
       <Project>{38219052-2565-4952-afa5-bb5cce49c4c3}</Project>
       <Name>Business.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EFPersonas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFPersonas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EFPersonas.edmx.diagram">
+      <DependentUpon>EFPersonas.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EFPersonas.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EFPersonas.Context.cs</LastGenOutput>
+      <DependentUpon>EFPersonas.edmx</DependentUpon>
+    </Content>
+    <Content Include="EFPersonas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFPersonas.edmx</DependentUpon>
+      <LastGenOutput>EFPersonas.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
