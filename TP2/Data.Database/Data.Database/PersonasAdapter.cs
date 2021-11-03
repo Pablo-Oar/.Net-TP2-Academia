@@ -108,7 +108,6 @@ namespace Data.Database
                     persona = new Personas();
                     persona.ID = per.id_persona;
                     persona.Legajo = (int)per.legajo;
-                    persona.Apellido = per.apellido;
                     persona.Direccion = per.direccion;
                     persona.Email = per.email;
                     persona.FechaNacimiento = per.fecha_nac;
@@ -148,77 +147,85 @@ namespace Data.Database
             }
         }
 
-        //    protected void Update(Usuario usuario)
-        //    {
-        //        try
-        //        {
-        //            this.OpenConnection();
-        //            SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave," +
-        //                "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email WHERE id_usuario=@id", SqlConn);
+        protected void Update(Personas per)
+        {
+            try
+            {
+                using (_EfConn)
+                {
+                    var persona = _EfConn.personas.Find(per.ID);
+                    persona.id_persona = per.ID;
+                    persona.legajo = (int)per.Legajo;
+                    persona.apellido = per.Apellido;
+                    persona.direccion = per.Direccion;
+                    persona.email = per.Email;
+                    persona.fecha_nac = per.FechaNacimiento;
+                    persona.id_plan = per.IDPlan;
+                    persona.nombre = per.Nombre;
+                    persona.telefono = per.Telefono;
+                    persona.tipo_persona = (int)per.TipoPersona;
+                    _EfConn.Entry(per).State = System.Data.Entity.EntityState.Modified;
+                    _EfConn.SaveChanges();
+                }
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionModificaDatosUsuario = new Exception("Error al modificar los datos de usuario", Ex);
+                throw ExcepcionModificaDatosUsuario;
+            }
+            finally
+            {
+                
+            }
+        }
 
-        //            cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
-        //            cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
-        //            cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
-        //            cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-        //            cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
-        //            cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-        //            cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
+        protected void Insert(Personas per)
+        {
+            try
+            {
+                using (_EfConn)
+                {
+                    var persona = new personas();
+                    persona.legajo = (int)per.Legajo;
+                    persona.apellido = per.Apellido;
+                    persona.direccion = per.Direccion;
+                    persona.email = per.Email;
+                    persona.fecha_nac = per.FechaNacimiento;
+                    persona.id_plan = per.IDPlan;
+                    persona.nombre = per.Nombre;
+                    persona.telefono = per.Telefono;
+                    persona.tipo_persona = (int)per.TipoPersona;
+                    _EfConn.personas.Add(persona);
+                    _EfConn.Entry(per).State = System.Data.Entity.EntityState.Added;
+                    _EfConn.SaveChanges();
+                }
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionInsertarUsuario = new Exception("Error al crear usuario", Ex);
+                throw ExcepcionInsertarUsuario;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
 
-        //            cmdSave.ExecuteNonQuery();
-        //        }
-        //        catch (Exception Ex)
-        //        {
-        //            Exception ExcepcionModificaDatosUsuario = new Exception("Error al modificar los datos de usuario", Ex);
-        //            throw ExcepcionModificaDatosUsuario;
-        //        }
-        //        finally
-        //        {
-        //            this.CloseConnection();
-        //        }
-        //    }
-
-        //    protected void Insert(Usuario usuario)
-        //    {
-        //        try
-        //        {
-        //            this.OpenConnection();
-        //            SqlCommand cmdSave = new SqlCommand("INSERT INTO usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email)"+
-        //                "VALUES(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) SELECT @@identity", SqlConn);
-
-        //            cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
-        //            cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
-        //            cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-        //            cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
-        //            cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-        //            cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
-        //            usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar()); //Así obtengo el ID que se asigno a la BD automaticamente.
-        //        }
-        //        catch (Exception Ex)
-        //        {
-        //            Exception ExcepcionInsertarUsuario = new Exception("Error al crear usuario", Ex);
-        //            throw ExcepcionInsertarUsuario;
-        //        }
-        //        finally
-        //        {
-        //            this.CloseConnection();
-        //        }
-        //    }
-
-        //    public void Save(Usuario usuario)
-        //    {
-        //        if(usuario.State == BusinessEntity.States.Deleted)
-        //        {
-        //            this.Delete(usuario.ID);
-        //        }
-        //        else if(usuario.State == BusinessEntity.States.New)
-        //        {
-        //            this.Insert(usuario);
-        //        }
-        //        else if(usuario.State == BusinessEntity.States.Modified)
-        //        {
-        //            this.Update(usuario);
-        //        }
-        //        usuario.State = BusinessEntity.States.Unmodified;
-        //    }
+        public void Save(Personas pers)
+        {
+            if (pers.State == BusinessEntity.States.Deleted)
+            {
+                this.Delete(pers.ID);
+            }
+            else if (pers.State == BusinessEntity.States.New)
+            {
+                this.Insert(pers);
+            }
+            else if (pers.State == BusinessEntity.States.Modified)
+            {
+                this.Update(pers);
+            }
+            pers.State = BusinessEntity.States.Unmodified;
+        }
     }
 }

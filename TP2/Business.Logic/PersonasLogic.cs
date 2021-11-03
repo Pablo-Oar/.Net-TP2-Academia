@@ -35,17 +35,17 @@ namespace Business.Logic
             return PersonasData.GetAll();
         }
 
-        //public Usuario GetOne(int IdUsuario)
-        //{
-        //    return PersonasData.GetOne(IdUsuario);
-        //}
-        //public void Delete(int IdUsuario)
-        //{
-        //    PersonasData.Delete(IdUsuario);
-        //}
-        //public void Save(Usuario User)
-        //{
-        //    PersonasData.Save(User);
-        //}
+        public Personas GetOne(int IdPer)
+        {
+            return PersonasData.GetOne(IdPer);
+        }
+        public void Delete(int IdUsuario)
+        {
+            PersonasData.Delete(IdUsuario);
+        }
+        public void Save(Personas per)
+        {
+            PersonasData.Save(per);
+        }
     }
 }
