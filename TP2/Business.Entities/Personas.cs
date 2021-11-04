@@ -20,8 +20,8 @@ namespace Business.Entities
 
         public enum TiposPersonas
         {
-            Alumno,
-            Docente,
+            Admin,
+            Usuario,
         }
         public int Legajo
         {

@@ -12,20 +12,20 @@ namespace Business.Entities
         private int _Cupo;
         private int _IDComision;
         private int _IDMateria;
-        private string _Descripcion;
+        //private string _Descripcion;
 
 
-        public string Descripcion
-        {
-            get
-            {
-                return _Descripcion;
-            }
-            set
-            {
-                _Descripcion = value;
-            }
-        }
+        //public string Descripcion
+        //{
+        //    get
+        //    {
+        //        return _Descripcion;
+        //    }
+        //    set
+        //    {
+        //        _Descripcion = value;
+        //    }
+        //}
 
         public int IDMateria
         {
