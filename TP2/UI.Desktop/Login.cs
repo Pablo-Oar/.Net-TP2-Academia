@@ -58,6 +58,7 @@ namespace UI.Desktop
             {
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Error de logueo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            this.Close();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

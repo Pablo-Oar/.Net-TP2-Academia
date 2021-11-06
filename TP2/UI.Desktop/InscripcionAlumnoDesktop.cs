@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Business.Entities;
+using Business.Logic;
+
+namespace UI.Desktop
+{
+    public partial class InscripcionAlumnoDesktop : ApplicationForm
+    {
+        public InscripcionAlumnoDesktop()
+        {
+            InitializeComponent();
+        }
+
+        private AlumnoInscripcion _InscripcionAlumnoActual;
+        public AlumnoInscripcion InscripcionAlumnoActual { get => _InscripcionAlumnoActual; set => _InscripcionAlumnoActual = value; }
+
+        public InscripcionAlumnoDesktop(ModoForm modo) : this()
+        {
+            this.Modo = modo;
+        }
+
+        public InscripcionAlumnoDesktop(int ID, ModoForm modo) : this()
+        {
+            this.Modo = modo;
+            Business.Logic.AlumnoInscripcionLogic aluinscrip = new Business.Logic.AlumnoInscripcionLogic();
+            InscripcionAlumnoActual = aluinscrip.GetOne(ID);
+            MapearDeDatos();
+            MapearADatos();
+        }
+        public override void MapearDeDatos()
+        {
+            this.txtIdInscripcion.Text = this.InscripcionAlumnoActual.ID.ToString();
+            this.txtIdAlumno.Text = this.InscripcionAlumnoActual.IDAlumno.ToString();
+            this.txtIdCurso.Text = this.InscripcionAlumnoActual.IDCurso.ToString();
+            this.txtCondicion.Text = this.InscripcionAlumnoActual.Condicion;
+            this.cmbNota.SelectedItem = this.InscripcionAlumnoActual.Nota;
+        }
+
+        public override void MapearADatos()
+        {
+            if (this.Modo == ModoForm.Alta)
+            {
+                this.btnAceptar.Text = "Guardar";
+                AlumnoInscripcion newAluInscripcion = new AlumnoInscripcion();
+                InscripcionAlumnoActual = newAluInscripcion;
+                MessageBox.Show("Inscripcion a Alumno creada");
+            }
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.btnAceptar.Text = "Eliminar";
+            }
+            if (this.Modo == ModoForm.Modificacion)
+            {
+                this.btnAceptar.Text = "Guardar";
+            }
+            if (this.Modo == ModoForm.Consulta)
+            {
+                this.btnAceptar.Text = "Aceptar";
+            }
+            if (this.Modo != ModoForm.Alta)
+            {
+                this.InscripcionAlumnoActual.ID = Convert.ToInt32(this.txtIdInscripcion.Text);
+            }
+            this.InscripcionAlumnoActual.IDAlumno = Convert.ToInt32(this.txtIdAlumno.Text);
+            this.InscripcionAlumnoActual.IDCurso = Convert.ToInt32(this.txtIdCurso.Text);
+            this.InscripcionAlumnoActual.Condicion = this.txtCondicion.Text;
+            this.InscripcionAlumnoActual.Nota = Convert.ToInt32(this.cmbNota.SelectedItem);
+            if (this.Modo == ModoForm.Alta)
+            {
+                this.InscripcionAlumnoActual.State = Plan.States.New;
+            }
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.InscripcionAlumnoActual.State = Plan.States.Deleted;
+            }
+            if (this.Modo == ModoForm.Modificacion)
+            {
+                this.InscripcionAlumnoActual.State = Plan.States.Modified;
+            }
+            if (this.Modo == ModoForm.Consulta)
+            {
+                this.InscripcionAlumnoActual.State = Plan.States.Unmodified;
+            }
+
+        }
+
+        public override void GuardarCambios()
+        {
+            if (this.Modo == ModoForm.Alta)
+            {
+                this.MapearADatos();
+                AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
+                ail.Save(this.InscripcionAlumnoActual);
+            }
+            else if (this.Modo == ModoForm.Modificacion)
+            {
+                this.MapearADatos();
+                AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
+                ail.Save(this.InscripcionAlumnoActual);
+            }
+            else if (this.Modo == ModoForm.Baja)
+            {
+                this.MapearADatos();
+                AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
+                ail.Save(this.InscripcionAlumnoActual);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
