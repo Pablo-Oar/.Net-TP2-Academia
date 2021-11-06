@@ -35,7 +35,7 @@ namespace Business.Logic
             return UsuarioData.GetAll();
         }
 
-        public List<Usuario> Login(string us, string pw)
+        public Usuario LogIn(string us, string pw)
         {
             return UsuarioData.Login( us, pw);
         }

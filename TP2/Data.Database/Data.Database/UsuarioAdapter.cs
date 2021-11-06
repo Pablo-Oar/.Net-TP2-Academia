@@ -81,9 +81,8 @@ namespace Data.Database
             return usr;
         }
 
-        public List<Usuario> Login(string us, string pw)
+        public Usuario Login(string us, string pw)
         {
-            List<Usuario> usuario = new List<Usuario>();
             Usuario usr = new Usuario();
             try
             {
@@ -113,8 +112,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            usuario.Add(usr);
-            return usuario;
+            return usr;
         }
 
         public void Delete(int ID)
