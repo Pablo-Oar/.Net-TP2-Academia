@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Business.Entities;
+﻿using Business.Entities;
 using Business.Logic;
+using System;
+using System.Windows.Forms;
 
 namespace UI.Desktop
 {
@@ -37,7 +30,7 @@ namespace UI.Desktop
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Listar();
-            
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -65,7 +58,8 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            if(this.dgvDocentes.SelectedRows.Count > 0){ 
+            if (this.dgvDocentes.SelectedRows.Count > 0)
+            {
                 int ID = ((Business.Entities.DocenteCurso)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
                 DocenteDesktop DD = new DocenteDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                 DD.ShowDialog();
@@ -90,6 +84,6 @@ namespace UI.Desktop
             {
                 MessageBox.Show("Seleccione una fila para eliminar un registro");
             }
-        }       
+        }
     }
 }

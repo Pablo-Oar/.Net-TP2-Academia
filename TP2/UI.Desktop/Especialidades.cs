@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Business.Logic;
+using System;
 using System.Windows.Forms;
-using Business.Entities;
-using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -37,7 +29,7 @@ namespace UI.Desktop
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Listar();
-            
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -65,7 +57,8 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            if(this.dgvEspecialidad.SelectedRows.Count > 0){ 
+            if (this.dgvEspecialidad.SelectedRows.Count > 0)
+            {
                 int ID = ((Business.Entities.Especialidad)this.dgvEspecialidad.SelectedRows[0].DataBoundItem).ID;
                 EspecialidadDesktop ED = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                 ED.ShowDialog();

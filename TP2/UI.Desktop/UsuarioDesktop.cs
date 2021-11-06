@@ -19,11 +19,11 @@ namespace UI.Desktop
             this.Modo = modo;
         }
 
-        public UsuarioDesktop(int ID, ModoForm modo) : this() 
+        public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
             Business.Logic.UsuarioLogic user = new Business.Logic.UsuarioLogic();
-            UsuarioActual = user.GetOne(ID);            
+            UsuarioActual = user.GetOne(ID);
             MapearDeDatos();
             MapearADatos();
         }
@@ -159,15 +159,16 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(this.Modo == ModoForm.Baja)
+            if (this.Modo == ModoForm.Baja)
             {
                 GuardarCambios();
                 Close();
-            }else if (Validar())
-                {
-                    GuardarCambios();
-                    Close();
-                }
+            }
+            else if (Validar())
+            {
+                GuardarCambios();
+                Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

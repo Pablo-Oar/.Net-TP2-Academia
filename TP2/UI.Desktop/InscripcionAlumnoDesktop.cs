@@ -41,7 +41,7 @@ namespace UI.Desktop
             this.txtIdAlumno.Text = this.InscripcionAlumnoActual.IDAlumno.ToString();
             this.txtIdCurso.Text = this.InscripcionAlumnoActual.IDCurso.ToString();
             this.txtCondicion.Text = this.InscripcionAlumnoActual.Condicion;
-            this.cmbNota.SelectedItem = this.InscripcionAlumnoActual.Nota;
+            this.cmbNota.SelectedIndex = this.InscripcionAlumnoActual.Nota;
         }
 
         public override void MapearADatos()
@@ -72,7 +72,7 @@ namespace UI.Desktop
             this.InscripcionAlumnoActual.IDAlumno = Convert.ToInt32(this.txtIdAlumno.Text);
             this.InscripcionAlumnoActual.IDCurso = Convert.ToInt32(this.txtIdCurso.Text);
             this.InscripcionAlumnoActual.Condicion = this.txtCondicion.Text;
-            this.InscripcionAlumnoActual.Nota = Convert.ToInt32(this.cmbNota.SelectedItem);
+            this.InscripcionAlumnoActual.Nota = this.cmbNota.SelectedIndex;
             if (this.Modo == ModoForm.Alta)
             {
                 this.InscripcionAlumnoActual.State = Plan.States.New;
@@ -117,6 +117,20 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (this.Modo == ModoForm.Baja)
+            {
+                GuardarCambios();
+                Close();
+            }
+            else if (Validar())
+            {
+                GuardarCambios();
+                Close();
+            }
         }
     }
 }
