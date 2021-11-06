@@ -8,10 +8,16 @@ namespace Business.Entities
 {
     public class DocenteCurso: BusinessEntity
     {
-        //private TiposCargos _Cargo;
+        private TiposCargos _Cargo;
         private int _IDCurso;
         private int _IDDocente;
 
+
+        public enum TiposCargos
+        {
+            Titular,
+            Auxiliar,
+        }
         public int IDDocente
         { 
             get
@@ -36,16 +42,16 @@ namespace Business.Entities
             }
         }
 
-        //public TiposCargos Cargo
-        //{
-        //    get
-        //    {
-        //        return _Cargo;
-        //    }
-        //    set
-        //    {
-        //        _Cargo = value;
-        //    }
-        //}
+        public TiposCargos Cargo
+        {
+            get
+            {
+                return _Cargo;
+            }
+            set
+            {
+                _Cargo = value;
+            }
+        }
     }
 }
