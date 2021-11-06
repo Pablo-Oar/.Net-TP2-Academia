@@ -9,7 +9,6 @@ namespace Data.Database
 {
     public class UsuarioAdapter:Adapter
     {
-        private static List<Usuario> _Usuarios;
 
         public List<Usuario> GetAll()
         {
@@ -229,17 +228,17 @@ namespace Data.Database
                     user.EMail = (string)drUsuarios["email"];
                     user.ID = (int)drUsuarios["id_persona"];
                 }
-                return user;
             }
             catch (Exception e)
             {
-                Exception ExcepcionManejada = new Exception("Error durante el logueo" +e.Message);
+                Exception ExcepcionManejada = new Exception("Error durante el logueo" + e.Message);
                 throw ExcepcionManejada;
             }
             finally
             {
                 this.CloseConnection();
             }
+            return user;
         }
     }
 }
