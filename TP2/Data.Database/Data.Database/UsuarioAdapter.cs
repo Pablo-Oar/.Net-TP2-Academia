@@ -231,9 +231,9 @@ namespace Data.Database
                 }
                 return user;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Exception ExcepcionManejada = new Exception("Error durante el logueo");
+                Exception ExcepcionManejada = new Exception("Error durante el logueo" +e.Message);
                 throw ExcepcionManejada;
             }
             finally
