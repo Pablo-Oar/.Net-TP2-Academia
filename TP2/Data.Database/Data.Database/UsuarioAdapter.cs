@@ -23,6 +23,7 @@ namespace Data.Database
                     Usuario usr = new Usuario();
                     //Mapeo de registro a objeto.
                     usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.IdPerosna = (int)drUsuarios["id_persona"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
@@ -59,6 +60,7 @@ namespace Data.Database
                 if (drUsuarios.Read())
                 {
                     usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.IdPerosna = (int)drUsuarios["id_persona"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
@@ -93,6 +95,7 @@ namespace Data.Database
                 if (drUsuarios.Read())
                 {
                     usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.IdPerosna = (int)drUsuarios["id_persona"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
@@ -226,7 +229,7 @@ namespace Data.Database
                     user.Nombre = (string)drUsuarios["nombre"];
                     user.Apellido = (string)drUsuarios["apellido"];
                     user.EMail = (string)drUsuarios["email"];
-                    user.ID = (int)drUsuarios["id_persona"];
+                    user.IdPerosna = (int)drUsuarios["id_persona"];
                 }
             }
             catch (Exception e)

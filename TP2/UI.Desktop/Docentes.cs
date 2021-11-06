@@ -14,19 +14,19 @@ namespace UI.Desktop
 {
     public partial class Docentes : Form
     {
-        private DocenteCursoLogic _oDocentes;
+        private PersonasLogic _oDocentes;
         public Docentes()
         {
             InitializeComponent();
             this.dgvDocentes.AutoGenerateColumns = false;
-            this.oDocentes = new DocenteCursoLogic();
-            this.dgvDocentes.DataSource = this.oDocentes.GetAll();
+            this.oDocentes = new PersonasLogic();
+            this.dgvDocentes.DataSource = this.oDocentes.GetByTipo((int)Personas.TiposPersonas.Docente);
         }
 
         public void Listar()
         {
-            DocenteCursoLogic ul = new DocenteCursoLogic();
-            this.dgvDocentes.DataSource = ul.GetAll();
+            PersonasLogic ul = new PersonasLogic();
+            this.dgvDocentes.DataSource = ul.GetByTipo((int)Personas.TiposPersonas.Docente);
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace UI.Desktop
             this.Close();
         }
 
-        public DocenteCursoLogic oDocentes
+        public PersonasLogic oDocentes
         {
             get { return _oDocentes; }
             set { _oDocentes = value; }

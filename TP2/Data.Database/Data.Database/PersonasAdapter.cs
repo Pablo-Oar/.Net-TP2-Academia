@@ -113,7 +113,36 @@ namespace Data.Database
                 }
                 return lsPersonas;
             }
-        }       
+        }
+
+        public Business.Entities.Personas GetByUser(Usuario us)
+        {
+            Personas persona = new Personas();
+            try
+            {
+                using (_EfConn)
+                {
+                    var per = _EfConn.personas.Find(us.IdPerosna);
+                    persona = new Personas();
+                    persona.ID = per.id_persona;
+                    persona.Legajo = (int)per.legajo;
+                    persona.Direccion = per.direccion;
+                    persona.Email = per.email;
+                    persona.FechaNacimiento = per.fecha_nac;
+                    persona.IDPlan = per.id_plan;
+                    persona.Nombre = per.nombre;
+                    persona.Apellido = per.apellido;
+                    persona.Telefono = per.telefono;
+                    persona.TipoPersona = (Personas.TiposPersonas)per.tipo_persona;
+                }
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionDatosUsuario = new Exception("Error al recuperar datos de la persona", Ex);
+                throw ExcepcionDatosUsuario;
+            }
+            return persona;
+        }
 
         public void Delete(int ID)
         {
