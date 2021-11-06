@@ -107,6 +107,18 @@
     <Compile Include="EspecialidadDesktop.Designer.cs">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="InscripcionAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionAlumno.Designer.cs">
+      <DependentUpon>InscripcionAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionAlumnoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionAlumnoDesktop.Designer.cs">
+      <DependentUpon>InscripcionAlumnoDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionAlumno.resx">
+      <DependentUpon>InscripcionAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionAlumnoDesktop.resx">
+      <DependentUpon>InscripcionAlumnoDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
