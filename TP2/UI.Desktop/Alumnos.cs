@@ -14,19 +14,19 @@ namespace UI.Desktop
 {
     public partial class Alumnos : Form
     {
-        private AlumnoInscripcionLogic _oAlumnos;
+        private PersonasLogic _oAlumnos;
         public Alumnos()
         {
             InitializeComponent();
             this.dgvAlumnos.AutoGenerateColumns = false;
-            this.oAlumnos = new AlumnoInscripcionLogic();
-            this.dgvAlumnos.DataSource = this.oAlumnos.GetAll();
+            this.oAlumnos = new PersonasLogic();
+            this.dgvAlumnos.DataSource = this.oAlumnos.GetByTipo(1);
         }
 
         public void Listar()
         {
-            AlumnoInscripcionLogic ul = new AlumnoInscripcionLogic();
-            this.dgvAlumnos.DataSource = ul.GetAll();
+            PersonasLogic ul = new PersonasLogic();
+            this.dgvAlumnos.DataSource = ul.GetByTipo(1);
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace UI.Desktop
             this.Close();
         }
 
-        public AlumnoInscripcionLogic oAlumnos
+        public PersonasLogic oAlumnos
         {
             get { return _oAlumnos; }
             set { _oAlumnos = value; }

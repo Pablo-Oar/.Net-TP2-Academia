@@ -21,7 +21,8 @@ namespace Business.Entities
         public enum TiposPersonas
         {
             Admin,
-            Usuario,
+            Alumno,
+            Docente,
         }
         public int Legajo
         {
