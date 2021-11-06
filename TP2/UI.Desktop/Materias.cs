@@ -25,14 +25,11 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            MateriaLogic ul = new MateriaLogic();
-            this.dgvMaterias.DataSource = ul.GetAll();
+            MateriaLogic ml = new MateriaLogic();
+            this.dgvMaterias.DataSource = ml.GetAll();
         }
 
-        private void Usuarios_Load(object sender, EventArgs e)
-        {
-            Listar();
-        }
+    
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -58,17 +55,17 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop UD = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            UD.ShowDialog();
+            MateriaDesktop MD = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
+            MD.ShowDialog();
             this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if(this.dgvMaterias.SelectedRows.Count > 0){ 
-                int ID = ((Business.Entities.Usuario)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                UD.ShowDialog();
+                int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+                MateriaDesktop MD = new MateriaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                MD.ShowDialog();
                 this.Listar();
             }
             else
@@ -81,9 +78,9 @@ namespace UI.Desktop
         {
             if (this.dgvMaterias.SelectedRows.Count > 0)
             {
-                int ID = ((Business.Entities.Usuario)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-                UD.ShowDialog();
+                int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+                MateriaDesktop MD = new MateriaDesktop(ID, ApplicationForm.ModoForm.Baja);
+                MD.ShowDialog();
                 this.Listar();
             }
             else

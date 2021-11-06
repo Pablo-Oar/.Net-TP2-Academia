@@ -207,5 +207,39 @@ namespace Data.Database
             }
             usuario.State = BusinessEntity.States.Unmodified;
         }
+
+        public Usuario LogIn(string nombreUsuario, string contrasena)
+        {
+            Usuario user = new Usuario();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where (nombre_usuario = @nombre_usuario and clave = @clave)", SqlConn);
+                cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
+                cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = contrasena;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                if (drUsuarios.Read())
+                {
+                    user.ID = (int)drUsuarios["id_usuario"];
+                    user.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    user.Clave = (string)drUsuarios["clave"];
+                    user.Habilitado = (bool)drUsuarios["habilitado"];
+                    user.Nombre = (string)drUsuarios["nombre"];
+                    user.Apellido = (string)drUsuarios["apellido"];
+                    user.EMail = (string)drUsuarios["email"];
+                    user.ID = (int)drUsuarios["id_persona"];
+                }
+                return user;
+            }
+            catch (Exception)
+            {
+                Exception ExcepcionManejada = new Exception("Error durante el logueo");
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
     }
 }

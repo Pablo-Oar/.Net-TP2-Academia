@@ -229,6 +229,7 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(881, 398);
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.tcUsuarios.ContentPanel.ResumeLayout(false);

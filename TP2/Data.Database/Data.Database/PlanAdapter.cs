@@ -72,13 +72,14 @@ namespace Data.Database
                     {
                         pla = new Plan();
                         pla.ID = p.id_plan;
-                        pla.Descripcion = p.desc_plan;                        
+                        pla.Descripcion = p.desc_plan;
+                        pla.IdEspecialidad = p.id_especialidad;
                         lsPlan.Add(pla);
                     }
                 }
                 catch (Exception Ex)
                 {
-                    Exception ExcepcionManejada = new Exception("Error al recuperar lista de Inscripciones de Alumnos" + Ex, Ex);
+                    Exception ExcepcionManejada = new Exception("Error al recuperar lista de planes" + Ex, Ex);
                     throw ExcepcionManejada;
                 }
                 finally
@@ -103,7 +104,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionDatosUsuario = new Exception("Error al recuperar datos de usuario", Ex);
+                Exception ExcepcionDatosUsuario = new Exception("Error al recuperar datos del plan", Ex);
                 throw ExcepcionDatosUsuario;
             }
             return pla;
@@ -122,7 +123,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionEliminarUsuario = new Exception("Error al recuperar datos de usuario", Ex);
+                Exception ExcepcionEliminarUsuario = new Exception("Error al eliminar el plan", Ex);
                 throw ExcepcionEliminarUsuario;
             }
             finally
@@ -145,7 +146,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionModificaDatosUsuario = new Exception("Error al modificar los datos de usuario", Ex);
+                Exception ExcepcionModificaDatosUsuario = new Exception("Error al modificar los datos del plan", Ex);
                 throw ExcepcionModificaDatosUsuario;
             }
             finally
@@ -171,7 +172,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionInsertarUsuario = new Exception("Error al crear usuario", Ex);
+                Exception ExcepcionInsertarUsuario = new Exception("Error al crear plan", Ex);
                 throw ExcepcionInsertarUsuario;
             }
             finally

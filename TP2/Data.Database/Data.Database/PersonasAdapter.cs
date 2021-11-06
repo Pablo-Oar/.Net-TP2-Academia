@@ -38,7 +38,7 @@ namespace Data.Database
                 }
                 catch (Exception Ex)
                 {
-                    Exception ExcepcionManejada = new Exception("Error al recuperar lista de usuarios" + Ex, Ex);
+                    Exception ExcepcionManejada = new Exception("Error al recuperar lista de personas" + Ex, Ex);
                     throw ExcepcionManejada;
                 }
                 finally
@@ -71,7 +71,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionDatosUsuario = new Exception("Error al recuperar datos de usuario", Ex);
+                Exception ExcepcionDatosUsuario = new Exception("Error al recuperar datos de la persona", Ex);
                 throw ExcepcionDatosUsuario;
             }
             return persona;
@@ -128,7 +128,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionEliminarUsuario = new Exception("Error al recuperar datos de usuario", Ex);
+                Exception ExcepcionEliminarUsuario = new Exception("Error al eliminar persona", Ex);
                 throw ExcepcionEliminarUsuario;
             }
             finally
@@ -159,7 +159,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionModificaDatosUsuario = new Exception("Error al modificar los datos de usuario", Ex);
+                Exception ExcepcionModificaDatosUsuario = new Exception("Error al modificar los datos de la persona", Ex);
                 throw ExcepcionModificaDatosUsuario;
             }
             finally
@@ -191,7 +191,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionInsertarUsuario = new Exception("Error al crear usuario", Ex);
+                Exception ExcepcionInsertarUsuario = new Exception("Error al crear persona", Ex);
                 throw ExcepcionInsertarUsuario;
             }
             finally

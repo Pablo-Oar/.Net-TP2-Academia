@@ -58,7 +58,7 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop UD = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            DocenteDesktop UD = new DocenteDesktop(ApplicationForm.ModoForm.Alta);
             UD.ShowDialog();
             this.Listar();
         }
@@ -66,9 +66,9 @@ namespace UI.Desktop
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if(this.dgvDocentes.SelectedRows.Count > 0){ 
-                int ID = ((Business.Entities.Usuario)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                UD.ShowDialog();
+                int ID = ((Business.Entities.DocenteCurso)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
+                DocenteDesktop DD = new DocenteDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                DD.ShowDialog();
                 this.Listar();
             }
             else
@@ -81,9 +81,9 @@ namespace UI.Desktop
         {
             if (this.dgvDocentes.SelectedRows.Count > 0)
             {
-                int ID = ((Business.Entities.Usuario)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-                UD.ShowDialog();
+                int ID = ((Business.Entities.DocenteCurso)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
+                DocenteDesktop DD = new DocenteDesktop(ID, ApplicationForm.ModoForm.Baja);
+                DD.ShowDialog();
                 this.Listar();
             }
             else

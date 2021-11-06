@@ -34,22 +34,23 @@ namespace UI.Desktop
             this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvEspecialidad = new System.Windows.Forms.DataGridView();
-            this.especialidadLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especialidadDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especialidadLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
             this.tlUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadLogicBindingSource)).BeginInit();
             this.tsUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.especialidadLogicBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcUsuarios
@@ -97,7 +98,8 @@ namespace UI.Desktop
             this.dgvEspecialidad.AutoGenerateColumns = false;
             this.dgvEspecialidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Descripcion});
+            this.Descripcion,
+            this.especialidadDataDataGridViewTextBoxColumn});
             this.tlUsuarios.SetColumnSpan(this.dgvEspecialidad, 2);
             this.dgvEspecialidad.DataSource = this.especialidadLogicBindingSource;
             this.dgvEspecialidad.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -109,9 +111,21 @@ namespace UI.Desktop
             this.dgvEspecialidad.TabIndex = 0;
             this.dgvEspecialidad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
-            // especialidadLogicBindingSource
+            // id
             // 
-            this.especialidadLogicBindingSource.DataSource = typeof(Business.Logic.EspecialidadLogic);
+            this.id.DataPropertyName = "id";
+            this.id.Frozen = true;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.Frozen = true;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -179,21 +193,15 @@ namespace UI.Desktop
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // id
+            // especialidadDataDataGridViewTextBoxColumn
             // 
-            this.id.DataPropertyName = "id";
-            this.id.Frozen = true;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.especialidadDataDataGridViewTextBoxColumn.DataPropertyName = "EspecialidadData";
+            this.especialidadDataDataGridViewTextBoxColumn.HeaderText = "EspecialidadData";
+            this.especialidadDataDataGridViewTextBoxColumn.Name = "especialidadDataDataGridViewTextBoxColumn";
             // 
-            // Descripcion
+            // especialidadLogicBindingSource
             // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.Frozen = true;
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.especialidadLogicBindingSource.DataSource = typeof(Business.Logic.EspecialidadLogic);
             // 
             // Especialidades
             // 
@@ -202,7 +210,9 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(817, 401);
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Especialidades";
-            this.Text = "Usuarios";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.tcUsuarios.ContentPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.ResumeLayout(false);
@@ -211,9 +221,9 @@ namespace UI.Desktop
             this.tcUsuarios.PerformLayout();
             this.tlUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadLogicBindingSource)).EndInit();
             this.tsUsuarios.ResumeLayout(false);
             this.tsUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.especialidadLogicBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,6 +242,7 @@ namespace UI.Desktop
         private System.Windows.Forms.BindingSource especialidadLogicBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especialidadDataDataGridViewTextBoxColumn;
     }
 }
 

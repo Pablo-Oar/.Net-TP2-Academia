@@ -58,17 +58,17 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop UD = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            UD.ShowDialog();
+            EspecialidadDesktop ED = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
+            ED.ShowDialog();
             this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if(this.dgvEspecialidad.SelectedRows.Count > 0){ 
-                int ID = ((Business.Entities.Usuario)this.dgvEspecialidad.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                UD.ShowDialog();
+                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidad.SelectedRows[0].DataBoundItem).ID;
+                EspecialidadDesktop ED = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                ED.ShowDialog();
                 this.Listar();
             }
             else
@@ -81,9 +81,9 @@ namespace UI.Desktop
         {
             if (this.dgvEspecialidad.SelectedRows.Count > 0)
             {
-                int ID = ((Business.Entities.Usuario)this.dgvEspecialidad.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-                UD.ShowDialog();
+                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidad.SelectedRows[0].DataBoundItem).ID;
+                EspecialidadDesktop ED = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Baja);
+                ED.ShowDialog();
                 this.Listar();
             }
             else

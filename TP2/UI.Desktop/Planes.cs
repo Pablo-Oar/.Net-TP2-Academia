@@ -25,8 +25,8 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            PlanLogic ul = new PlanLogic();
-            this.dgvPlanes.DataSource = ul.GetAll();
+            PlanLogic pl = new PlanLogic();
+            this.dgvPlanes.DataSource = pl.GetAll();
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
@@ -58,16 +58,16 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop UD = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            UD.ShowDialog();
+            PlanesDesktop PD = new PlanesDesktop(ApplicationForm.ModoForm.Alta);
+            PD.ShowDialog();
             this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if(this.dgvPlanes.SelectedRows.Count > 0){ 
-                int ID = ((Business.Entities.Usuario)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+                PlanesDesktop UD = new PlanesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                 UD.ShowDialog();
                 this.Listar();
             }
@@ -81,8 +81,8 @@ namespace UI.Desktop
         {
             if (this.dgvPlanes.SelectedRows.Count > 0)
             {
-                int ID = ((Business.Entities.Usuario)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
+                int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+                PlanesDesktop UD = new PlanesDesktop(ID, ApplicationForm.ModoForm.Baja);
                 UD.ShowDialog();
                 this.Listar();
             }

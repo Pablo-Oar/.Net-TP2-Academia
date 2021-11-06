@@ -52,5 +52,18 @@ namespace Business.Logic
         {
             UsuarioData.Save(User);
         }
+
+        public Usuario LogIn(string nombreUsuario, string contraseña)
+        {
+            try
+            {
+                Usuario usu = UsuarioData.LogIn(nombreUsuario, contraseña);
+                return usu;
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
     }
 }
