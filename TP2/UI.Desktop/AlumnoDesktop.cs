@@ -13,9 +13,9 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class InscripcionAlumnoDesktop : ApplicationForm
+    public partial class AlumnoDesktop : ApplicationForm
     {
-        public InscripcionAlumnoDesktop()
+        public AlumnoDesktop()
         {
             InitializeComponent();
         }
@@ -28,12 +28,12 @@ namespace UI.Desktop
         private AlumnoInscripcion _AlumnoActual;
         public AlumnoInscripcion AlumnoActual { get => _AlumnoActual; set => _AlumnoActual = value; }
 
-        public InscripcionAlumnoDesktop(ModoForm modo) : this()
+        public AlumnoDesktop(ModoForm modo) : this()
         {
             this.Modo = modo;
         }
 
-        public InscripcionAlumnoDesktop(int ID, ModoForm modo) : this()
+        public AlumnoDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
             Business.Logic.AlumnoInscripcionLogic alu = new Business.Logic.AlumnoInscripcionLogic();

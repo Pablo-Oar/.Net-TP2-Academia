@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InscripcionAlumnoDesktop.cs">
+    <Compile Include="AlumnoDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InscripcionAlumnoDesktop.Designer.cs">
-      <DependentUpon>InscripcionAlumnoDesktop.cs</DependentUpon>
+    <Compile Include="AlumnoDesktop.Designer.cs">
+      <DependentUpon>AlumnoDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="ComisionDesktop.cs">
       <SubType>Form</SubType>
@@ -131,11 +131,11 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InscripcionesAlumnos.cs">
+    <Compile Include="Alumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InscripcionesAlumnos.Designer.cs">
-      <DependentUpon>InscripcionesAlumnos.cs</DependentUpon>
+    <Compile Include="Alumnos.Designer.cs">
+      <DependentUpon>Alumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="PlanesDesktop.cs">
       <SubType>Form</SubType>
@@ -169,8 +169,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="InscripcionAlumnoDesktop.resx">
-      <DependentUpon>InscripcionAlumnoDesktop.cs</DependentUpon>
+    <EmbeddedResource Include="AlumnoDesktop.resx">
+      <DependentUpon>AlumnoDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComisionDesktop.resx">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
@@ -208,8 +208,8 @@
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InscripcionesAlumnos.resx">
-      <DependentUpon>InscripcionesAlumnos.cs</DependentUpon>
+    <EmbeddedResource Include="Alumnos.resx">
+      <DependentUpon>Alumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanesDesktop.resx">
       <DependentUpon>PlanesDesktop.cs</DependentUpon>

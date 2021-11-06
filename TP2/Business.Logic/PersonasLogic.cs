@@ -39,6 +39,11 @@ namespace Business.Logic
         {
             return PersonasData.GetOne(IdPer);
         }
+
+        public List<Personas> GetByTipo(int tipo)
+        {
+            return PersonasData.GetByTipo(tipo);
+        }
         public void Delete(int IdUsuario)
         {
             PersonasData.Delete(IdUsuario);

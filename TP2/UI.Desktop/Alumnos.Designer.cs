@@ -1,7 +1,7 @@
 ﻿
 namespace UI.Desktop
 {
-    partial class InscripcionesAlumnos
+    partial class Alumnos
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,16 +30,10 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InscripcionesAlumnos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alumnos));
             this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alumnoInscripcionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -47,6 +41,19 @@ namespace UI.Desktop
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.personasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -54,6 +61,7 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource)).BeginInit();
             this.tsUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcUsuarios
@@ -96,14 +104,20 @@ namespace UI.Desktop
             this.dgvAlumnos.AutoGenerateColumns = false;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stateDataGridViewTextBoxColumn,
-            this.iDDataGridViewTextBoxColumn,
-            this.IDAlumno,
-            this.IDCurso,
-            this.Nota,
-            this.Condicion});
+            this.Legajo,
+            this.IDPlan,
+            this.Direccion,
+            this.Nombre,
+            this.Apellido,
+            this.Email,
+            this.Telefono,
+            this.FechaNacimiento,
+            this.Column1,
+            this.TipoPersona,
+            this.State,
+            this.ID});
             this.tlUsuarios.SetColumnSpan(this.dgvAlumnos, 2);
-            this.dgvAlumnos.DataSource = this.alumnoInscripcionBindingSource;
+            this.dgvAlumnos.DataSource = this.personasBindingSource;
             this.dgvAlumnos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAlumnos.Location = new System.Drawing.Point(3, 3);
             this.dgvAlumnos.MultiSelect = false;
@@ -112,42 +126,6 @@ namespace UI.Desktop
             this.dgvAlumnos.Size = new System.Drawing.Size(875, 338);
             this.dgvAlumnos.TabIndex = 0;
             this.dgvAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
-            // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // IDAlumno
-            // 
-            this.IDAlumno.DataPropertyName = "IDAlumno";
-            this.IDAlumno.HeaderText = "IDAlumno";
-            this.IDAlumno.Name = "IDAlumno";
-            // 
-            // IDCurso
-            // 
-            this.IDCurso.DataPropertyName = "IDCurso";
-            this.IDCurso.HeaderText = "IDCurso";
-            this.IDCurso.Name = "IDCurso";
-            // 
-            // Nota
-            // 
-            this.Nota.DataPropertyName = "Nota";
-            this.Nota.HeaderText = "Nota";
-            this.Nota.Name = "Nota";
-            // 
-            // Condicion
-            // 
-            this.Condicion.DataPropertyName = "Condicion";
-            this.Condicion.HeaderText = "Condicion";
-            this.Condicion.Name = "Condicion";
             // 
             // alumnoInscripcionBindingSource
             // 
@@ -219,6 +197,82 @@ namespace UI.Desktop
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
+            // personasBindingSource
+            // 
+            this.personasBindingSource.DataSource = typeof(Business.Entities.Personas);
+            // 
+            // Legajo
+            // 
+            this.Legajo.DataPropertyName = "Legajo";
+            this.Legajo.HeaderText = "Legajo";
+            this.Legajo.Name = "Legajo";
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "IDPlan";
+            this.IDPlan.HeaderText = "IDPlan";
+            this.IDPlan.Name = "IDPlan";
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "FechaNacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "FechaNacimiento";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // TipoPersona
+            // 
+            this.TipoPersona.DataPropertyName = "TipoPersona";
+            this.TipoPersona.HeaderText = "TipoPersona";
+            this.TipoPersona.Name = "TipoPersona";
+            // 
+            // State
+            // 
+            this.State.DataPropertyName = "State";
+            this.State.HeaderText = "State";
+            this.State.Name = "State";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
             // Alumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,9 +280,7 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(881, 398);
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Alumnos";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alumnos";
+            this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.tcUsuarios.ContentPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.ResumeLayout(false);
@@ -240,6 +292,7 @@ namespace UI.Desktop
             ((System.ComponentModel.ISupportInitialize)(this.alumnoInscripcionBindingSource)).EndInit();
             this.tsUsuarios.ResumeLayout(false);
             this.tsUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,12 +309,19 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.BindingSource alumnoInscripcionBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDAlumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
+        private System.Windows.Forms.BindingSource personasBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPersona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }
 
