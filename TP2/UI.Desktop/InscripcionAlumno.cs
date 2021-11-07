@@ -86,5 +86,25 @@ namespace UI.Desktop
             }
 
         }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (this.dgvAlumnos.SelectedRows.Count > 0)
+            {
+                int ID = ((Business.Entities.AlumnoInscripcion)this.dgvAlumnos.SelectedRows[0].DataBoundItem).ID;
+                NotaAlumnoDesktop UD = new NotaAlumnoDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                UD.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para editar un registro");
+            }
+        }
     }
 }//Fin
