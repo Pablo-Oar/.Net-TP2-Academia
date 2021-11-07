@@ -132,5 +132,26 @@ namespace UI.Desktop
                 Close();
             }
         }
+
+        public override bool Validar()
+        {
+            if (this.txtIdInscripcion.Text != "" &&
+           this.txtIdAlumno.Text != "" &&
+           this.txtIdCurso.Text != "" &&
+           this.txtCondicion.Text != "" &&
+           this.cmbNota.Text != "")
+            {
+                //MessageBox.Show("valida ok");
+                return true;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();
+                System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
+                Notificar("Error", "Datos invalidos", boton, icono);
+                return false;
+            }
+        }
+
     }
 }

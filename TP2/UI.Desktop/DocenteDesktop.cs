@@ -17,8 +17,8 @@ namespace UI.Desktop
 
         }
 
-        private DocenteCurso _DocenteActual;
-        public DocenteCurso DocenteActual { get => _DocenteActual; set => _DocenteActual = value; }
+        private Personas _DocenteActual;
+        public Personas DocenteActual { get => _DocenteActual; set => _DocenteActual = value; }
 
         public DocenteDesktop(ModoForm modo) : this()
         {
@@ -28,16 +28,22 @@ namespace UI.Desktop
         public DocenteDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
-            Business.Logic.DocenteCursoLogic doc = new Business.Logic.DocenteCursoLogic();
+            Business.Logic.PersonasLogic doc = new Business.Logic.PersonasLogic();
             DocenteActual = doc.GetOne(ID);
             MapearDeDatos();
             MapearADatos();
         }
         public override void MapearDeDatos()
         {
-            this.txtIdDocente.Text = this.DocenteActual.IDDocente.ToString();
-            this.txtIdCurso.Text = this.DocenteActual.IDCurso.ToString();
-            this.txtCargo.Text = this.DocenteActual.Cargo.ToString();
+            this.txtNombre.Text = this.DocenteActual.Nombre;
+            this.txtApellido.Text = this.DocenteActual.Apellido;
+            this.txtDireccion.Text = this.DocenteActual.Direccion;
+            this.txtEmail.Text = this.DocenteActual.Email;
+            this.txtTelefono.Text = this.DocenteActual.Telefono;
+            this.dtpFechaNacimiento.Value = this.DocenteActual.FechaNacimiento;
+            this.txtLegajo.Text = this.DocenteActual.Legajo.ToString();
+            this.txtIdPlan.Text = this.DocenteActual.IDPlan.ToString();
+
         }
 
         public override void MapearADatos()
@@ -45,9 +51,9 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Alta)
             {
                 this.btnAceptar.Text = "Guardar";
-                DocenteCurso newDocCurso = new DocenteCurso();
+                Personas newDocCurso = new Personas();
                 DocenteActual = newDocCurso;
-                MessageBox.Show("creado docente");
+                MessageBox.Show("¡Docente Creado!");
             }
             if (this.Modo == ModoForm.Baja)
             {
@@ -63,10 +69,18 @@ namespace UI.Desktop
             }
             if (this.Modo != ModoForm.Alta)
             {
-                this.DocenteActual.IDDocente = Convert.ToInt32(this.txtIdCurso.Text);
+                this.DocenteActual.IDPlan = Convert.ToInt32(this.txtIdPlan.Text);
             }
-            this.DocenteActual.IDDocente = Convert.ToInt32(this.txtIdDocente.Text);
-            this.DocenteActual.IDCurso = Convert.ToInt32(this.txtIdCurso.Text);
+            this.DocenteActual.Nombre = this.txtNombre.Text;
+            this.DocenteActual.Apellido = this.txtApellido.Text;
+            this.DocenteActual.Direccion = this.txtDireccion.Text;
+            this.DocenteActual.Email = this.txtEmail.Text;
+            this.DocenteActual.Telefono = this.txtTelefono.Text;
+            this.DocenteActual.FechaNacimiento = this.dtpFechaNacimiento.Value;
+            this.DocenteActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
+            this.DocenteActual.IDPlan = Convert.ToInt32(this.txtIdPlan.Text);
+            this.DocenteActual.TipoPersona = (Personas.TiposPersonas) 2;
+
             //this.DocenteActual.Cargo = this.txtCargo.Text;
             if (this.Modo == ModoForm.Alta)
             {
@@ -92,20 +106,37 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Alta)
             {
                 this.MapearADatos();
-                DocenteCursoLogic dl = new DocenteCursoLogic();
+                PersonasLogic dl = new PersonasLogic();
                 dl.Save(this.DocenteActual);
             }
             else if (this.Modo == ModoForm.Modificacion)
             {
                 this.MapearADatos();
-                DocenteCursoLogic dl = new DocenteCursoLogic();
+                PersonasLogic dl = new PersonasLogic();
                 dl.Save(this.DocenteActual);
             }
             else if (this.Modo == ModoForm.Baja)
             {
                 this.MapearADatos();
-                DocenteCursoLogic dl = new DocenteCursoLogic();
+                PersonasLogic dl = new PersonasLogic();
                 dl.Save(this.DocenteActual);
+            }
+        }
+
+        public override bool Validar()
+        {
+            if (this.txtNombre.Text != "" && this.txtEmail.Text != "" && this.txtDireccion.Text != "" && this.txtApellido.Text != "" &&
+                this.txtIdPlan.Text != "" && this.txtLegajo.Text != "" && this.txtTelefono.Text != "" && this.dtpFechaNacimiento.Text != "")
+            {
+                //MessageBox.Show("valida ok");
+                return true;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();
+                System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
+                Notificar("Error", "Datos invalidos", boton, icono);
+                return false;
             }
         }
         private void btnAceptar_Click(object sender, EventArgs e)

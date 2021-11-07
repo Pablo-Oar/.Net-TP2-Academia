@@ -29,135 +29,200 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIdAlumno = new System.Windows.Forms.Label();
-            this.lblNota = new System.Windows.Forms.Label();
-            this.lblPersona = new System.Windows.Forms.Label();
-            this.lblIdCurso = new System.Windows.Forms.Label();
-            this.lblCondicion = new System.Windows.Forms.Label();
-            this.txtIdAlumno = new System.Windows.Forms.TextBox();
-            this.txtNota = new System.Windows.Forms.TextBox();
-            this.txtCondicion = new System.Windows.Forms.TextBox();
-            this.txtIdCurso = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblAraujo = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblIdPlan = new System.Windows.Forms.Label();
+            this.lblLegajo = new System.Windows.Forms.Label();
+            this.txtIdPlan = new System.Windows.Forms.TextBox();
+            this.txtLegajo = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
+            this.dtsFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // lblIdAlumno
+            // lblNombre
             // 
-            this.lblIdAlumno.AutoSize = true;
-            this.lblIdAlumno.Location = new System.Drawing.Point(39, 41);
-            this.lblIdAlumno.Name = "lblIdAlumno";
-            this.lblIdAlumno.Size = new System.Drawing.Size(59, 13);
-            this.lblIdAlumno.TabIndex = 0;
-            this.lblIdAlumno.Text = "ID Alumno:";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(26, 32);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre:";
             // 
-            // lblNota
+            // lblEmail
             // 
-            this.lblNota.AutoSize = true;
-            this.lblNota.Location = new System.Drawing.Point(39, 89);
-            this.lblNota.Name = "lblNota";
-            this.lblNota.Size = new System.Drawing.Size(36, 13);
-            this.lblNota.TabIndex = 1;
-            this.lblNota.Text = "Nota: ";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(26, 80);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 1;
+            this.lblEmail.Text = "Email:";
             // 
-            // lblPersona
+            // lblAraujo
             // 
-            this.lblPersona.AutoSize = true;
-            this.lblPersona.Location = new System.Drawing.Point(39, 147);
-            this.lblPersona.Name = "lblPersona";
-            this.lblPersona.Size = new System.Drawing.Size(46, 13);
-            this.lblPersona.TabIndex = 2;
-            this.lblPersona.Text = "Persona";
+            this.lblAraujo.AutoSize = true;
+            this.lblAraujo.Location = new System.Drawing.Point(241, 32);
+            this.lblAraujo.Name = "lblAraujo";
+            this.lblAraujo.Size = new System.Drawing.Size(50, 13);
+            this.lblAraujo.TabIndex = 3;
+            this.lblAraujo.Text = "Apellido: ";
             // 
-            // lblIdCurso
+            // lblDireccion
             // 
-            this.lblIdCurso.AutoSize = true;
-            this.lblIdCurso.Location = new System.Drawing.Point(254, 41);
-            this.lblIdCurso.Name = "lblIdCurso";
-            this.lblIdCurso.Size = new System.Drawing.Size(54, 13);
-            this.lblIdCurso.TabIndex = 3;
-            this.lblIdCurso.Text = "ID Curso: ";
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(241, 80);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(55, 13);
+            this.lblDireccion.TabIndex = 4;
+            this.lblDireccion.Text = "Dirección:";
             // 
-            // lblCondicion
+            // txtNombre
             // 
-            this.lblCondicion.AutoSize = true;
-            this.lblCondicion.Location = new System.Drawing.Point(254, 89);
-            this.lblCondicion.Name = "lblCondicion";
-            this.lblCondicion.Size = new System.Drawing.Size(57, 13);
-            this.lblCondicion.TabIndex = 4;
-            this.lblCondicion.Text = "Condición:";
+            this.txtNombre.Location = new System.Drawing.Point(102, 24);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(118, 20);
+            this.txtNombre.TabIndex = 5;
             // 
-            // txtIdAlumno
+            // txtEmail
             // 
-            this.txtIdAlumno.Location = new System.Drawing.Point(115, 33);
-            this.txtIdAlumno.Name = "txtIdAlumno";
-            this.txtIdAlumno.Size = new System.Drawing.Size(100, 20);
-            this.txtIdAlumno.TabIndex = 5;
+            this.txtEmail.Location = new System.Drawing.Point(102, 73);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(118, 20);
+            this.txtEmail.TabIndex = 6;
             // 
-            // txtNota
+            // txtDireccion
             // 
-            this.txtNota.Location = new System.Drawing.Point(115, 82);
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(100, 20);
-            this.txtNota.TabIndex = 6;
+            this.txtDireccion.Location = new System.Drawing.Point(304, 73);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.TabIndex = 7;
             // 
-            // txtCondicion
+            // txtApellido
             // 
-            this.txtCondicion.Location = new System.Drawing.Point(317, 82);
-            this.txtCondicion.Name = "txtCondicion";
-            this.txtCondicion.Size = new System.Drawing.Size(100, 20);
-            this.txtCondicion.TabIndex = 7;
-            // 
-            // txtIdCurso
-            // 
-            this.txtIdCurso.Location = new System.Drawing.Point(317, 33);
-            this.txtIdCurso.Name = "txtIdCurso";
-            this.txtIdCurso.Size = new System.Drawing.Size(100, 20);
-            this.txtIdCurso.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(115, 144);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
+            this.txtApellido.Location = new System.Drawing.Point(304, 24);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.TabIndex = 8;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(147, 203);
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Location = new System.Drawing.Point(145, 220);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(246, 203);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(244, 220);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblIdPlan
+            // 
+            this.lblIdPlan.AutoSize = true;
+            this.lblIdPlan.Location = new System.Drawing.Point(26, 131);
+            this.lblIdPlan.Name = "lblIdPlan";
+            this.lblIdPlan.Size = new System.Drawing.Size(45, 13);
+            this.lblIdPlan.TabIndex = 12;
+            this.lblIdPlan.Text = "ID Plan:";
+            // 
+            // lblLegajo
+            // 
+            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.Location = new System.Drawing.Point(241, 131);
+            this.lblLegajo.Name = "lblLegajo";
+            this.lblLegajo.Size = new System.Drawing.Size(42, 13);
+            this.lblLegajo.TabIndex = 13;
+            this.lblLegajo.Text = "Legajo:";
+            // 
+            // txtIdPlan
+            // 
+            this.txtIdPlan.Location = new System.Drawing.Point(102, 124);
+            this.txtIdPlan.Name = "txtIdPlan";
+            this.txtIdPlan.Size = new System.Drawing.Size(118, 20);
+            this.txtIdPlan.TabIndex = 14;
+            // 
+            // txtLegajo
+            // 
+            this.txtLegajo.Location = new System.Drawing.Point(304, 128);
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.Size = new System.Drawing.Size(100, 20);
+            this.txtLegajo.TabIndex = 15;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(304, 170);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 17;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(241, 173);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(52, 13);
+            this.lblTelefono.TabIndex = 16;
+            this.lblTelefono.Text = "Telefono:";
+            // 
+            // lblFechaNacimiento
+            // 
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(26, 172);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(96, 13);
+            this.lblFechaNacimiento.TabIndex = 18;
+            this.lblFechaNacimiento.Text = "Fecha Nacimiento:";
+            // 
+            // dtsFechaNacimiento
+            // 
+            this.dtsFechaNacimiento.Location = new System.Drawing.Point(128, 166);
+            this.dtsFechaNacimiento.Name = "dtsFechaNacimiento";
+            this.dtsFechaNacimiento.Size = new System.Drawing.Size(92, 20);
+            this.dtsFechaNacimiento.TabIndex = 19;
             // 
             // AlumnoDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 258);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(450, 265);
+            this.Controls.Add(this.dtsFechaNacimiento);
+            this.Controls.Add(this.lblFechaNacimiento);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.lblTelefono);
+            this.Controls.Add(this.txtLegajo);
+            this.Controls.Add(this.txtIdPlan);
+            this.Controls.Add(this.lblLegajo);
+            this.Controls.Add(this.lblIdPlan);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.txtIdCurso);
-            this.Controls.Add(this.txtCondicion);
-            this.Controls.Add(this.txtNota);
-            this.Controls.Add(this.txtIdAlumno);
-            this.Controls.Add(this.lblCondicion);
-            this.Controls.Add(this.lblIdCurso);
-            this.Controls.Add(this.lblPersona);
-            this.Controls.Add(this.lblNota);
-            this.Controls.Add(this.lblIdAlumno);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblDireccion);
+            this.Controls.Add(this.lblAraujo);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblNombre);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AlumnoDesktop";
@@ -173,17 +238,23 @@ namespace UI.Desktop
 
         #endregion
 
-        private System.Windows.Forms.Label lblIdAlumno;
-        private System.Windows.Forms.Label lblNota;
-        private System.Windows.Forms.Label lblPersona;
-        private System.Windows.Forms.Label lblIdCurso;
-        private System.Windows.Forms.Label lblCondicion;
-        private System.Windows.Forms.TextBox txtIdAlumno;
-        private System.Windows.Forms.TextBox txtNota;
-        private System.Windows.Forms.TextBox txtCondicion;
-        private System.Windows.Forms.TextBox txtIdCurso;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblAraujo;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblIdPlan;
+        private System.Windows.Forms.Label lblLegajo;
+        private System.Windows.Forms.TextBox txtIdPlan;
+        private System.Windows.Forms.TextBox txtLegajo;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblFechaNacimiento;
+        private System.Windows.Forms.DateTimePicker dtsFechaNacimiento;
     }
 }

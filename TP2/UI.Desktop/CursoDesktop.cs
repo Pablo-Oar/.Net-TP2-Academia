@@ -128,6 +128,22 @@ namespace UI.Desktop
             }
         }
 
+        public override bool Validar()
+        {
+            if (this.txtIdCurso.Text != "" && this.txtIdComision.Text != "" && this.txtIdMateria.Text != "" && this.txtCupo.Text != ""
+                 && this.txtAnioCalendario.Text != "")
+            {
+                //MessageBox.Show("valida ok");
+                return true;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();
+                System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
+                Notificar("Error", "Datos invalidos", boton, icono);
+                return false;
+            }
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

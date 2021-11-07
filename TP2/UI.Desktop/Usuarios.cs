@@ -7,6 +7,12 @@ namespace UI.Desktop
     public partial class Usuarios : Form
     {
         private UsuarioLogic _oUsuarios;
+
+        public UsuarioLogic oUsuarios
+        {
+            get { return _oUsuarios; }
+            set { _oUsuarios = value; }
+        }
         public Usuarios()
         {
             InitializeComponent();
@@ -14,6 +20,7 @@ namespace UI.Desktop
             this.oUsuarios = new UsuarioLogic();
             this.dgvUsuarios.DataSource = this.oUsuarios.GetAll();
         }
+
 
         public void Listar()
         {
@@ -37,11 +44,6 @@ namespace UI.Desktop
             this.Close();
         }
 
-        public UsuarioLogic oUsuarios
-        {
-            get { return _oUsuarios; }
-            set { _oUsuarios = value; }
-        }
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
