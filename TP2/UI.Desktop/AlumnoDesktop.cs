@@ -53,7 +53,7 @@ namespace UI.Desktop
                 this.btnAceptar.Text = "Guardar";
                 Personas newAlumno = new Personas();
                 AlumnoActual = newAlumno;
-                MessageBox.Show("creada la Comision");
+                MessageBox.Show("¡¡Alumno creado!!");
             }
             if (this.Modo == ModoForm.Baja)
             {

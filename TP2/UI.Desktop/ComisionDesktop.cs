@@ -35,7 +35,6 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            this.txtIdComision.Text = this.ComisionActual.ID.ToString();
             this.txtIdPlan.Text = this.ComisionActual.IdPlan.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion.ToString();
             this.txtAñoEspecialidad.Text = this.ComisionActual.AñoEspecialidad.ToString();
@@ -62,11 +61,6 @@ namespace UI.Desktop
             {
                 this.btnAceptar.Text = "Aceptar";
             }
-            if (this.Modo != ModoForm.Alta)
-            {
-                this.ComisionActual.ID = Convert.ToInt32(this.txtIdComision.Text);
-            }
-            this.ComisionActual.ID = Convert.ToInt32(this.txtIdComision.Text);
             this.ComisionActual.IdPlan = Convert.ToInt32(this.txtIdPlan.Text);
             this.ComisionActual.Descripcion = this.txtDescripcion.Text;
             this.ComisionActual.AñoEspecialidad = Convert.ToInt32(this.txtAñoEspecialidad.Text);
@@ -126,7 +120,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (this.txtIdComision.Text != "" && this.txtIdPlan.Text != "" && this.txtDescripcion.Text != "" && this.txtAñoEspecialidad.Text != "")
+            if (this.txtIdPlan.Text != "" && this.txtDescripcion.Text != "" && this.txtAñoEspecialidad.Text != "")
             {
                 //MessageBox.Show("valida ok");
                 return true;

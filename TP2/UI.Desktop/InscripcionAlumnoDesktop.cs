@@ -37,7 +37,6 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            this.txtIdInscripcion.Text = this.InscripcionAlumnoActual.ID.ToString();
             this.txtIdAlumno.Text = this.InscripcionAlumnoActual.IDAlumno.ToString();
             this.txtIdCurso.Text = this.InscripcionAlumnoActual.IDCurso.ToString();
             this.txtCondicion.Text = this.InscripcionAlumnoActual.Condicion;
@@ -64,10 +63,6 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Consulta)
             {
                 this.btnAceptar.Text = "Aceptar";
-            }
-            if (this.Modo != ModoForm.Alta)
-            {
-                this.InscripcionAlumnoActual.ID = Convert.ToInt32(this.txtIdInscripcion.Text);
             }
             this.InscripcionAlumnoActual.IDAlumno = Convert.ToInt32(this.txtIdAlumno.Text);
             this.InscripcionAlumnoActual.IDCurso = Convert.ToInt32(this.txtIdCurso.Text);
@@ -135,11 +130,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (this.txtIdInscripcion.Text != "" &&
-           this.txtIdAlumno.Text != "" &&
-           this.txtIdCurso.Text != "" &&
-           this.txtCondicion.Text != "" &&
-           this.cmbNota.Text != "")
+            if (this.txtIdAlumno.Text != "" && this.txtIdCurso.Text != "" && this.txtCondicion.Text != "" && this.cmbNota.Text != "")
             {
                 //MessageBox.Show("valida ok");
                 return true;

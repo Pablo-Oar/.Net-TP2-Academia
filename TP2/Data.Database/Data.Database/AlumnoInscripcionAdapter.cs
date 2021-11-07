@@ -143,7 +143,6 @@ namespace Data.Database
                 using (_EfConn)
                 {
                     var Alumno = _EfConn.alumnos_inscripciones.Find(alu.ID);
-                    Alumno.id_inscripcion = alu.ID;
                     Alumno.id_alumno = alu.IDAlumno;
                     Alumno.id_curso = (int)alu.IDCurso;
                     Alumno.nota = (int)alu.Nota;
@@ -170,13 +169,12 @@ namespace Data.Database
                 using (_EfConn)
                 {
                     var Alumno = new alumnos_inscripciones();
-                    Alumno.id_inscripcion = alu.ID;
                     Alumno.id_alumno = alu.IDAlumno;
                     Alumno.id_curso = (int)alu.IDCurso;
                     Alumno.nota = (int)alu.Nota;
                     Alumno.condicion = alu.Condicion;
                     _EfConn.alumnos_inscripciones.Add(Alumno);
-                    _EfConn.Entry(Alumno).State = System.Data.Entity.EntityState.Modified;
+                    _EfConn.Entry(Alumno).State = System.Data.Entity.EntityState.Added;
                     _EfConn.SaveChanges();
                 }
             }
