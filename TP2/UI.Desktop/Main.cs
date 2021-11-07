@@ -70,5 +70,17 @@ namespace UI.Desktop
             Docentes frmDocentes = new Docentes();
             frmDocentes.ShowDialog();
         }
+
+        private void mnuReportes_Click(object sender, EventArgs e)
+        {
+            CursosReport cur = new CursosReport();
+            cur.ShowDialog();
+        }
+
+        private void reporteDePlanesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PlanesReport pla = new PlanesReport();
+            pla.ShowDialog();
+        }
     }
 }

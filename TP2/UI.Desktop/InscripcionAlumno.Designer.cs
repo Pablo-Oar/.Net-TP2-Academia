@@ -47,6 +47,7 @@ namespace UI.Desktop
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.TsbNota = new System.Windows.Forms.ToolStripButton();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -94,7 +95,6 @@ namespace UI.Desktop
             // dgvAlumnos
             // 
             this.dgvAlumnos.AutoGenerateColumns = false;
-            this.dgvAlumnos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDAlumnoDataGridViewTextBoxColumn,
@@ -156,7 +156,6 @@ namespace UI.Desktop
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Location = new System.Drawing.Point(463, 235);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
@@ -166,7 +165,6 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(544, 235);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
@@ -181,10 +179,11 @@ namespace UI.Desktop
             this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
-            this.tsbEliminar});
+            this.tsbEliminar,
+            this.TsbNota});
             this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(81, 25);
+            this.tsUsuarios.Size = new System.Drawing.Size(135, 25);
             this.tsUsuarios.TabIndex = 0;
             // 
             // tsbNuevo
@@ -218,17 +217,28 @@ namespace UI.Desktop
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "toolStripButton1";
             this.tsbEliminar.ToolTipText = "Eliminar";
+            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
+            // 
+            // TsbNota
+            // 
+            this.TsbNota.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TsbNota.Image = ((System.Drawing.Image)(resources.GetObject("TsbNota.Image")));
+            this.TsbNota.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TsbNota.Name = "TsbNota";
+            this.TsbNota.Size = new System.Drawing.Size(23, 22);
+            this.TsbNota.Tag = "";
+            this.TsbNota.Text = "toolStripButton1";
+            this.TsbNota.ToolTipText = "Nota";
+            this.TsbNota.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // InscripcionAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(622, 286);
             this.Controls.Add(this.tcUsuarios);
             this.Name = "InscripcionAlumno";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InscripcionAlumno";
             this.tcUsuarios.ContentPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.ResumeLayout(false);
@@ -262,5 +272,6 @@ namespace UI.Desktop
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource alumnoInscripcionBindingSource;
+        private System.Windows.Forms.ToolStripButton TsbNota;
     }
 }

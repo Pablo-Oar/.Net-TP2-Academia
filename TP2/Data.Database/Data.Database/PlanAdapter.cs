@@ -100,6 +100,7 @@ namespace Data.Database
                     pla = new Plan();
                     pla.ID = p.id_plan;
                     pla.Descripcion = p.desc_plan;
+                    pla.IdEspecialidad = p.id_especialidad;
                 }
             }
             catch (Exception Ex)
@@ -140,6 +141,7 @@ namespace Data.Database
                     var pla = _EfConn.planes.Find(p.ID);
                     pla.id_plan = p.ID;
                     pla.desc_plan = p.Descripcion;
+                    pla.id_especialidad = p.IdEspecialidad;
                     _EfConn.Entry(pla).State = System.Data.Entity.EntityState.Modified;
                     _EfConn.SaveChanges();
                 }
@@ -162,9 +164,8 @@ namespace Data.Database
                 using (_EfConn)
                 {
                     var pla = new planes();
-                    pla.id_plan = p.ID;
                     pla.desc_plan = p.Descripcion;
-
+                    pla.id_especialidad = p.IdEspecialidad;
                     _EfConn.planes.Add(pla);
                     _EfConn.Entry(pla).State = System.Data.Entity.EntityState.Added;
                     _EfConn.SaveChanges();

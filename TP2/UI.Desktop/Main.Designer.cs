@@ -42,6 +42,7 @@ namespace UI.Desktop
             this.mnuEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuInscripcionesAlumnos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDePlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +84,8 @@ namespace UI.Desktop
             this.mnuPlanes,
             this.mnuEspecialidades,
             this.mnuInscripcionesAlumnos,
-            this.mnuReportes});
+            this.mnuReportes,
+            this.reporteDePlanesToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.consultaToolStripMenuItem.Text = "Menu";
@@ -155,7 +157,15 @@ namespace UI.Desktop
             // 
             this.mnuReportes.Name = "mnuReportes";
             this.mnuReportes.Size = new System.Drawing.Size(197, 22);
-            this.mnuReportes.Text = "Reportes";
+            this.mnuReportes.Text = "Reporte de cursos";
+            this.mnuReportes.Click += new System.EventHandler(this.mnuReportes_Click);
+            // 
+            // reporteDePlanesToolStripMenuItem
+            // 
+            this.reporteDePlanesToolStripMenuItem.Name = "reporteDePlanesToolStripMenuItem";
+            this.reporteDePlanesToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.reporteDePlanesToolStripMenuItem.Text = "Reporte de planes";
+            this.reporteDePlanesToolStripMenuItem.Click += new System.EventHandler(this.reporteDePlanesToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -194,5 +204,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem mnuReportes;
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDePlanesToolStripMenuItem;
     }
 }
