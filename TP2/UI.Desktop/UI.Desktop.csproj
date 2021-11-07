@@ -278,8 +278,8 @@
     <EmbeddedResource Include="PlanesDesktop.resx">
       <DependentUpon>PlanesDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportCursosViewer - Copia.rdlc" />
-    <EmbeddedResource Include="ReportPlanesViewer.rdlc" />
+    <EmbeddedResource Include="ReportPlanes.rdlc" />
+    <EmbeddedResource Include="ReportCursosViewer.rdlc" />
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,9 +317,16 @@
     <None Include="Properties\DataSources\Business.Entities.Personas.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Plan.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Usuario.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.AlumnoInscripcionLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.BusinessLogic.datasource" />
     <None Include="Properties\DataSources\Business.Logic.ComisionLogic.datasource" />
     <None Include="Properties\DataSources\Business.Logic.CursoLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.DocenteCursoLogic.datasource" />
     <None Include="Properties\DataSources\Business.Logic.EspecialidadLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.MateriaLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.PersonasLogic.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.PlanLogic1.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.UsuarioLogic.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

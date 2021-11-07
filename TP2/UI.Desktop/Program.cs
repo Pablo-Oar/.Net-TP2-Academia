@@ -13,7 +13,7 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PlanesReport());
+            Application.Run(new Login());
         }
     }
 }
