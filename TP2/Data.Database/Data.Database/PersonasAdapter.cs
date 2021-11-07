@@ -182,7 +182,7 @@ namespace Data.Database
                     persona.nombre = per.Nombre;
                     persona.telefono = per.Telefono;
                     persona.tipo_persona = (int)per.TipoPersona;
-                    _EfConn.Entry(per).State = System.Data.Entity.EntityState.Modified;
+                    _EfConn.Entry(persona).State = System.Data.Entity.EntityState.Modified;
                     _EfConn.SaveChanges();
                 }
             }
@@ -214,7 +214,7 @@ namespace Data.Database
                     persona.telefono = per.Telefono;
                     persona.tipo_persona = (int)per.TipoPersona;
                     _EfConn.personas.Add(persona);
-                    _EfConn.Entry(per).State = System.Data.Entity.EntityState.Added;
+                    _EfConn.Entry(persona).State = System.Data.Entity.EntityState.Added;
                     _EfConn.SaveChanges();
                 }
             }
@@ -225,7 +225,6 @@ namespace Data.Database
             }
             finally
             {
-                this.CloseConnection();
             }
         }
 
