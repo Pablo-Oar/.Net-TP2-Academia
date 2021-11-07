@@ -23,3 +23,19 @@ TP2/Data.Database/Data.Database/obj/Debug/Data.Database.pdb
 TP2/Data.Database/Data.Database/bin/*
 TP2/Data.Database/Data.Database/obj/*
 TP2/.vs/TP2/v16/.suo
+TP2/packages/
+TP2/UI.Desktop/CursosReport.cs
+TP2/UI.Desktop/CursosReport.Designer.cs
+TP2/UI.Desktop/CursosReport.resx
+TP2/UI.Desktop/PlanesReport.cs
+TP2/UI.Desktop/PlanesReport.Designer.cs
+TP2/UI.Desktop/PlanesReport.resx
+TP2/UI.Desktop/ReportCursosViewer - Copia.rdlc
+TP2/UI.Desktop/ReportPlanesViewer.rdlc
+TP2/UI.Desktop/Properties/DataSources/Business.Logic.CursoLogic.datasource
+TP2/UI.Desktop/SqlServerTypes/Loader.cs
+TP2/UI.Desktop/SqlServerTypes/readme.htm
+TP2/UI.Desktop/SqlServerTypes/x64/msvcr120.dll
+TP2/UI.Desktop/SqlServerTypes/x64/SqlServerSpatial140.dll
+TP2/UI.Desktop/SqlServerTypes/x86/msvcr120.dll
+TP2/UI.Desktop/SqlServerTypes/x86/SqlServerSpatial140.dll
