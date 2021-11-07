@@ -44,7 +44,7 @@ namespace UI.Desktop
                 this.btnAceptar.Text = "Guardar";
                 Usuario newUser = new Usuario();
                 UsuarioActual = newUser;
-                MessageBox.Show("creado usuarioactual");
+                MessageBox.Show("creado nuevo usuario");
             }
             if (this.Modo == ModoForm.Baja)
             {
@@ -68,6 +68,7 @@ namespace UI.Desktop
             this.UsuarioActual.Clave = this.txtClave.Text;
             this.UsuarioActual.Apellido = this.txtApellido.Text;
             this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+            this.UsuarioActual.IdPerosna = 7 ;
             if (this.Modo == ModoForm.Alta)
             {
                 this.UsuarioActual.State = Usuario.States.New;
@@ -107,6 +108,20 @@ namespace UI.Desktop
                 ul.Save(this.UsuarioActual);
             }
         }
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (this.Modo == ModoForm.Baja)
+            {
+                GuardarCambios();
+                Close();
+            }
+            else if (Validar())
+            {
+                GuardarCambios();
+                Close();
+            }
+        }
+
         public override bool Validar()
         {
             if (this.txtNombre.Text != "" &&
@@ -122,11 +137,14 @@ namespace UI.Desktop
             {
                 System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();
                 System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
-                Notificar("Error", "Datos invalidos", boton, icono); // ----------------------- no se como pasar botones de parametros, revisar tema id que a veces va y a veces no
+                Notificar("Error", "Datos invalidos", boton, icono);
                 return false;
             }
         }
-
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void UsuarioDesktop_Load(object sender, EventArgs e)
         {
 
@@ -157,24 +175,7 @@ namespace UI.Desktop
 
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            if (this.Modo == ModoForm.Baja)
-            {
-                GuardarCambios();
-                Close();
-            }
-            else if (Validar())
-            {
-                GuardarCambios();
-                Close();
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+       
 
         private void lblConfirmarClave_Click(object sender, EventArgs e)
         {

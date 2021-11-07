@@ -34,26 +34,26 @@ namespace UI.Desktop
             this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docenteCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docenteCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
             this.tlUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
-            this.tsUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.docenteCursoBindingSource)).BeginInit();
+            this.tsUsuarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcUsuarios
@@ -72,10 +72,12 @@ namespace UI.Desktop
             // 
             // tcUsuarios.TopToolStripPanel
             // 
+            this.tcUsuarios.TopToolStripPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tcUsuarios.TopToolStripPanel.Controls.Add(this.tsUsuarios);
             // 
             // tlUsuarios
             // 
+            this.tlUsuarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tlUsuarios.ColumnCount = 2;
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -94,6 +96,7 @@ namespace UI.Desktop
             // dgvCursos
             // 
             this.dgvCursos.AutoGenerateColumns = false;
+            this.dgvCursos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stateDataGridViewTextBoxColumn,
@@ -112,6 +115,18 @@ namespace UI.Desktop
             this.dgvCursos.Size = new System.Drawing.Size(638, 220);
             this.dgvCursos.TabIndex = 0;
             this.dgvCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             // 
             // IDComision
             // 
@@ -137,9 +152,14 @@ namespace UI.Desktop
             this.IDMateria.HeaderText = "IDMateria";
             this.IDMateria.Name = "IDMateria";
             // 
+            // docenteCursoBindingSource
+            // 
+            this.docenteCursoBindingSource.DataSource = typeof(Business.Entities.Curso);
+            // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Location = new System.Drawing.Point(485, 229);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
@@ -150,6 +170,7 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(566, 229);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
@@ -203,22 +224,6 @@ namespace UI.Desktop
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // docenteCursoBindingSource
-            // 
-            this.docenteCursoBindingSource.DataSource = typeof(Business.Entities.Curso);
-            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,9 +242,9 @@ namespace UI.Desktop
             this.tcUsuarios.PerformLayout();
             this.tlUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docenteCursoBindingSource)).EndInit();
             this.tsUsuarios.ResumeLayout(false);
             this.tsUsuarios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.docenteCursoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

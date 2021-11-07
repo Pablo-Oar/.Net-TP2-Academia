@@ -14,8 +14,7 @@ namespace UI.Desktop
         public Main(Usuario usu)
         {
             InitializeComponent();
-            this.lblNombre.Text = usu.Nombre;
-            this.lblApellido.Text = usu.Apellido;
+            this.lblBienvenido.Text = "¡¡Bienvenido al Sistema Gestion de Academia!! \n" + usu.Nombre + ", " + usu.Apellido;
         }
 
         private void mnuUsuarios_Click(object sender, EventArgs e)
@@ -56,7 +55,20 @@ namespace UI.Desktop
 
         private void mnuInscripcionesAlumnos_Click(object sender, EventArgs e)
         {
+            InscripcionAlumno frmInscripcionAlumnos = new InscripcionAlumno();
+            frmInscripcionAlumnos.ShowDialog();
+        }
 
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Alumnos frmAlumnos = new Alumnos();
+            frmAlumnos.ShowDialog();
+        }
+
+        private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Docentes frmDocentes = new Docentes();
+            frmDocentes.ShowDialog();
         }
     }
 }

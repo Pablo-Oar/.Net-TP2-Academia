@@ -12,16 +12,9 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public Usuario usuarioLogged //Setted when user log in is successfull
+        public Usuario usuarioLogueado //Seteado cuando el logueo del usuario es exitoso! 
         {
             get; set;
-        }
-
-
-
-        private void btnSalir_Ingresar(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnIngresar_Click_1(object sender, EventArgs e)
@@ -41,11 +34,10 @@ namespace UI.Desktop
             {
                 this.txtUsuario.Clear();
                 this.txtContraseña.Clear();
-                //this.DialogResult = DialogResult.OK;
-                this.usuarioLogged = usu;
+                usuarioLogueado = usu; //Seteo el usuario logueado que se realizo de forma correcta! 
                 Main main = new Main(usu);
                 main.ShowDialog();
-                //this.Close();//Close after successfull login
+                
             }
             else
             {

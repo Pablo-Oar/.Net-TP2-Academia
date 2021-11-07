@@ -128,5 +128,22 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        public override bool Validar()
+        {
+            if (this.txtIDPlan.Text != "" &&
+           this.txtDescPlan.Text != "" &&
+           this.txtIDEspecialidad.Text != "") { 
+                //MessageBox.Show("valida ok");
+                return true;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();
+                System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
+                Notificar("Error", "Datos invalidos", boton, icono);
+                return false;
+            }
+        }
     }
 }

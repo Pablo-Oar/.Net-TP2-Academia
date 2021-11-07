@@ -50,7 +50,7 @@ namespace UI.Desktop
                 this.btnAceptar.Text = "Guardar";
                 Materia newMat = new Materia();
                 MateriaActual = newMat;
-                MessageBox.Show("creada materia");
+                MessageBox.Show("¡Materia creada!");
             }
             if (this.Modo == ModoForm.Baja)
             {
@@ -113,6 +113,27 @@ namespace UI.Desktop
             }
         }
 
+
+
+        public override bool Validar()
+        {
+            if (this.txtHsSemanales.Text != "" &&
+           this.txtIDPlan.Text != "" &&
+           this.txtHsTotales.Text != "" &&
+           this.txtDescripcion.Text != "")
+            {
+                //MessageBox.Show("valida ok");
+                return true;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBoxButtons boton = new System.Windows.Forms.MessageBoxButtons();
+                System.Windows.Forms.MessageBoxIcon icono = new System.Windows.Forms.MessageBoxIcon();
+                Notificar("Error", "Datos invalidos", boton, icono);
+                return false;
+            }
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Modo == ModoForm.Baja)
@@ -127,10 +148,9 @@ namespace UI.Desktop
             }
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }

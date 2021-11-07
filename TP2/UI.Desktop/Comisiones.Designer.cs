@@ -61,20 +61,22 @@ namespace UI.Desktop
             // tcUsuarios.ContentPanel
             // 
             this.tcUsuarios.ContentPanel.Controls.Add(this.tlUsuarios);
-            this.tcUsuarios.ContentPanel.Size = new System.Drawing.Size(881, 373);
+            this.tcUsuarios.ContentPanel.Size = new System.Drawing.Size(538, 244);
             this.tcUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tcUsuarios.Name = "tcUsuarios";
-            this.tcUsuarios.Size = new System.Drawing.Size(881, 398);
+            this.tcUsuarios.Size = new System.Drawing.Size(538, 269);
             this.tcUsuarios.TabIndex = 0;
             this.tcUsuarios.Text = "toolStripContainer1";
             // 
             // tcUsuarios.TopToolStripPanel
             // 
+            this.tcUsuarios.TopToolStripPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tcUsuarios.TopToolStripPanel.Controls.Add(this.tsUsuarios);
             // 
             // tlUsuarios
             // 
+            this.tlUsuarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tlUsuarios.ColumnCount = 2;
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -87,12 +89,13 @@ namespace UI.Desktop
             this.tlUsuarios.RowCount = 2;
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlUsuarios.Size = new System.Drawing.Size(881, 373);
+            this.tlUsuarios.Size = new System.Drawing.Size(538, 244);
             this.tlUsuarios.TabIndex = 0;
             // 
             // dgvComision
             // 
             this.dgvComision.AutoGenerateColumns = false;
+            this.dgvComision.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvComision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComision.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -107,7 +110,7 @@ namespace UI.Desktop
             this.dgvComision.MultiSelect = false;
             this.dgvComision.Name = "dgvComision";
             this.dgvComision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComision.Size = new System.Drawing.Size(875, 338);
+            this.dgvComision.Size = new System.Drawing.Size(532, 209);
             this.dgvComision.TabIndex = 0;
             this.dgvComision.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
@@ -148,7 +151,8 @@ namespace UI.Desktop
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(722, 347);
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(379, 218);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -158,7 +162,8 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(803, 347);
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(460, 218);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -215,10 +220,11 @@ namespace UI.Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 398);
+            this.ClientSize = new System.Drawing.Size(538, 269);
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Comisiones";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comisiones";
             this.Load += new System.EventHandler(this.Usuarios_Load);

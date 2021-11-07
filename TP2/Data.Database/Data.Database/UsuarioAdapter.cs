@@ -13,6 +13,7 @@ namespace Data.Database
         public List<Usuario> GetAll()
         {
             List<Usuario> usuarios = new List<Usuario>();
+            Usuario usr = null;
             try
             {
                 this.OpenConnection();
@@ -20,7 +21,7 @@ namespace Data.Database
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
                 while (drUsuarios.Read())
                 {
-                    Usuario usr = new Usuario();
+                    usr = new Usuario();
                     //Mapeo de registro a objeto.
                     usr.ID = (int)drUsuarios["id_usuario"];
                     usr.IdPerosna = (int)drUsuarios["id_persona"];
@@ -143,7 +144,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave," +
-                    "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email WHERE id_usuario=@id", SqlConn);
+                    "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email, id_persona = @id_persona WHERE id_usuario=@id", SqlConn);
                
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
@@ -152,7 +153,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
-
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IdPerosna;
                 cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -171,8 +172,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email)"+
-                    "VALUES(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) SELECT @@identity", SqlConn);
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email, id_persona)"+
+                    "VALUES(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @id_persona) SELECT @@identity", SqlConn);
 
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
@@ -180,6 +181,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IdPerosna;
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar()); //Así obtengo el ID que se asigno a la BD automaticamente.
             }
             catch (Exception Ex)
@@ -216,7 +218,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where (nombre_usuario = @nombre_usuario and clave = @clave)", SqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE (nombre_usuario = @nombre_usuario AND clave = @clave)", SqlConn);
                 cmdUsuarios.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = nombreUsuario;
                 cmdUsuarios.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = contrasena;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();

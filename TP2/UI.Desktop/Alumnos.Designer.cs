@@ -79,10 +79,12 @@ namespace UI.Desktop
             // 
             // tcUsuarios.TopToolStripPanel
             // 
+            this.tcUsuarios.TopToolStripPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tcUsuarios.TopToolStripPanel.Controls.Add(this.tsUsuarios);
             // 
             // tlUsuarios
             // 
+            this.tlUsuarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tlUsuarios.ColumnCount = 2;
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -101,6 +103,7 @@ namespace UI.Desktop
             // dgvAlumnos
             // 
             this.dgvAlumnos.AutoGenerateColumns = false;
+            this.dgvAlumnos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Legajo,
@@ -132,6 +135,7 @@ namespace UI.Desktop
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Location = new System.Drawing.Point(831, 244);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
@@ -142,6 +146,7 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(912, 244);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
@@ -272,7 +277,9 @@ namespace UI.Desktop
             this.ClientSize = new System.Drawing.Size(990, 295);
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Alumnos";
-            this.Text = "Usuarios";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alumnos";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.tcUsuarios.ContentPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.ResumeLayout(false);
