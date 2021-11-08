@@ -42,6 +42,11 @@ namespace UI.Desktop
             this.txtIdCurso.Text = this.InscripcionAlumnoActual.IDCurso.ToString();
             this.txtCondicion.Text = this.InscripcionAlumnoActual.Condicion;
             this.cmbNota.SelectedIndex = this.InscripcionAlumnoActual.Nota;
+            this.txtIdCurso.Enabled = true;
+            if (this.Modo == ModoForm.Modificacion)
+            {
+                this.txtIdCurso.Enabled = false;
+            }
         }
 
         public override void MapearADatos()
@@ -97,8 +102,19 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Alta)
             {
                 this.MapearADatos();
-                AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
-                ail.Save(this.InscripcionAlumnoActual);
+                CursoLogic cl = new CursoLogic();
+                Curso cur = cl.GetOne(InscripcionAlumnoActual.IDCurso);
+                if (cur.Cupo > 0)
+                {
+                    cur.Cupo = cur.Cupo - 1;
+                    cl.Save(cur);
+                    AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
+                    ail.Save(this.InscripcionAlumnoActual);
+                }
+                else
+                {
+                    MessageBox.Show("No hay cupo en el curso");
+                }
             }
             else if (this.Modo == ModoForm.Modificacion)
             {
@@ -108,7 +124,11 @@ namespace UI.Desktop
             }
             else if (this.Modo == ModoForm.Baja)
             {
+                CursoLogic cl = new CursoLogic();
+                Curso cur = cl.GetOne(InscripcionAlumnoActual.IDCurso);
                 this.MapearADatos();
+                cur.Cupo = cur.Cupo + 1;
+                cl.Save(cur);
                 AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
                 ail.Save(this.InscripcionAlumnoActual);
             }
