@@ -60,12 +60,24 @@
             <tr>
                 <td style="text-align: right; width: 115px;">
                     <asp:Label ID="Label5" runat="server"  Text="Nota"></asp:Label></td>
-                <td style="width: 53px">
-                    <asp:TextBox ID="NotaTextBox" runat="server" SkinId="textBoxSkin" Width="359px" TextMode="Number"></asp:TextBox>
+                <td style="width: 53px" aria-busy="False">
+                    <asp:DropDownList ID="DdlNota" runat="server" Width="98px">
+                        <asp:ListItem>0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
                 <td>
                     <asp:Label ID="Label6" runat="server" ForeColor="Red" Text="* "></asp:Label>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="NotaTextBox" ErrorMessage="El campo Nota  no puede estar vacio" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DdlNota" ErrorMessage="El campo Nota  no puede estar vacio" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
                 </td>
             </tr>
 

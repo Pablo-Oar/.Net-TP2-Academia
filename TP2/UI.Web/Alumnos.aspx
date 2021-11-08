@@ -112,16 +112,6 @@
                 </td>
             </tr>
             <tr>
-                <td style="text-align: right; width: 115px;">Fecha de Nacimiento</td>
-                <td style="width: 53px">
-                    <asp:TextBox ID="FechadeNacTextBox" runat="server" SkinId="textBoxSkin" Width="359px"></asp:TextBox>
-                </td>
-                <td>
-                    <asp:Label ID="Label10" runat="server" ForeColor="Red" Text="* "></asp:Label>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="FechadeNacTextBox" ErrorMessage="El nombre de usuario no puede estar vacio" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
                 <td style="text-align: right; width: 115px;">Tipo de persona</td>
                 <td style="width: 53px">
                     <asp:TextBox ID="TipoPersonaTextBox" runat="server" SkinId="textBoxSkin" Width="359px" Enabled="False" OnTextChanged="TipoPersonaTextBox_TextChanged">1</asp:TextBox>
@@ -129,6 +119,24 @@
                 <td>
                     <asp:Label ID="Label11" runat="server" ForeColor="Red" Text="* "></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="TipoPersonaTextBox" ErrorMessage="El nombre de usuario no puede estar vacio" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; width: 115px;">Fecha de Nacimiento</td>
+                <td style="width: 53px">
+                    <asp:Calendar ID="FechaNacCalendar" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                        <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                        <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                        <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                        <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                        <WeekendDayStyle BackColor="#CCCCFF" />
+                    </asp:Calendar>
+                </td>
+                <td>
+                    <asp:Label ID="Label10" runat="server" ForeColor="Red" Text="* "></asp:Label>
                 </td>
             </tr>
         </table>

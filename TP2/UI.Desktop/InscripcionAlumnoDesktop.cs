@@ -37,6 +37,7 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
+
             this.txtIdAlumno.Text = this.InscripcionAlumnoActual.IDAlumno.ToString();
             this.txtIdCurso.Text = this.InscripcionAlumnoActual.IDCurso.ToString();
             this.txtCondicion.Text = this.InscripcionAlumnoActual.Condicion;
@@ -45,6 +46,14 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Modificacion)
             {
                 this.txtIdCurso.Enabled = false;
+            }
+        }
+            if (this.Modo == ModoForm.Baja)
+            {
+            this.txtIdAlumno.Enabled=false;
+            this.txtIdCurso.Enabled = false;
+            this.txtCondicion.Enabled = false;
+            this.cmbNota.Enabled = false;
             }
         }
 
@@ -56,6 +65,7 @@ namespace UI.Desktop
                 AlumnoInscripcion newAluInscripcion = new AlumnoInscripcion();
                 InscripcionAlumnoActual = newAluInscripcion;
                 MessageBox.Show("Inscripcion a Alumno creada");
+
             }
             if (this.Modo == ModoForm.Baja)
             {
@@ -75,19 +85,19 @@ namespace UI.Desktop
             this.InscripcionAlumnoActual.Nota = this.cmbNota.SelectedIndex;
             if (this.Modo == ModoForm.Alta)
             {
-                this.InscripcionAlumnoActual.State = Plan.States.New;
+                this.InscripcionAlumnoActual.State = AlumnoInscripcion.States.New;
             }
             if (this.Modo == ModoForm.Baja)
             {
-                this.InscripcionAlumnoActual.State = Plan.States.Deleted;
+                this.InscripcionAlumnoActual.State = AlumnoInscripcion.States.Deleted;
             }
             if (this.Modo == ModoForm.Modificacion)
             {
-                this.InscripcionAlumnoActual.State = Plan.States.Modified;
+                this.InscripcionAlumnoActual.State = AlumnoInscripcion.States.Modified;
             }
             if (this.Modo == ModoForm.Consulta)
             {
-                this.InscripcionAlumnoActual.State = Plan.States.Unmodified;
+                this.InscripcionAlumnoActual.State = AlumnoInscripcion.States.Unmodified;
             }
 
         }

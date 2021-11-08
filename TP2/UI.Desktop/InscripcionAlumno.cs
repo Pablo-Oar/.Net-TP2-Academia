@@ -89,7 +89,17 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-
+            if (this.dgvAlumnos.SelectedRows.Count > 0)
+            {
+                int ID = ((Business.Entities.AlumnoInscripcion)this.dgvAlumnos.SelectedRows[0].DataBoundItem).ID;
+                InscripcionAlumnoDesktop MD = new InscripcionAlumnoDesktop(ID, ApplicationForm.ModoForm.Baja);
+                MD.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para eliminar un registro");
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

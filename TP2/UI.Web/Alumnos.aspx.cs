@@ -106,7 +106,7 @@ namespace UI.Web
             this.TelefonoTextBox.Text = this.Entity.Telefono;
             this.DireccionTextBox.Text = this.Entity.Direccion;
             this.idPlanTextBox.Text = this.Entity.IDPlan.ToString();
-            this.FechadeNacTextBox.Text = this.Entity.FechaNacimiento.ToString();
+            this.FechaNacCalendar.SelectedDate = this.Entity.FechaNacimiento;
             this.LegajoTextBox.Text = this.Entity.Legajo.ToString();
         }
 
@@ -130,7 +130,7 @@ namespace UI.Web
             alumno.Direccion = this.DireccionTextBox.Text;
             alumno.IDPlan = int.Parse(this.idPlanTextBox.Text);
             alumno.Legajo = int.Parse(this.LegajoTextBox.Text);
-            alumno.FechaNacimiento = DateTime.Parse(this.FechadeNacTextBox.Text);
+            alumno.FechaNacimiento = this.FechaNacCalendar.SelectedDate;
             alumno.TipoPersona = (Personas.TiposPersonas)int.Parse(this.TipoPersonaTextBox.Text);
         }
 
@@ -181,7 +181,7 @@ namespace UI.Web
             this.DireccionTextBox.Enabled = enable;
             this.idPlanTextBox.Enabled = enable;
             LegajoTextBox.Enabled = enable;
-            this.FechadeNacTextBox.Enabled = enable;
+            this.FechaNacCalendar.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -216,7 +216,7 @@ namespace UI.Web
             this.TelefonoTextBox.Text = String.Empty;
             this.DireccionTextBox.Text = String.Empty;
             this.idPlanTextBox.Text = String.Empty;
-            this.FechadeNacTextBox.Text = String.Empty;
+            this.FechaNacCalendar.SelectedDate = DateTime.Now;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

@@ -39,6 +39,12 @@ namespace UI.Desktop
             this.txtIDPlan.Text = this.PlanActual.ID.ToString();
             this.txtIDEspecialidad.Text = this.PlanActual.IdEspecialidad.ToString();
             this.txtDescPlan.Text = this.PlanActual.Descripcion.ToString();
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.txtIDPlan.Enabled = false;
+                this.txtIDEspecialidad.Enabled = false;
+                this.txtDescPlan.Enabled = false;
+            }
         }
 
         public override void MapearADatos()

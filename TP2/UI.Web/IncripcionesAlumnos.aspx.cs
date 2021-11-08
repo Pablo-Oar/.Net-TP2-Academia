@@ -102,7 +102,7 @@ namespace UI.Web
             this.idAlumnoTextBox.Text = this.Entity.IDAlumno.ToString();
             this.idCursoTextBox.Text = this.Entity.IDCurso.ToString();
             this.CondicionTextBox.Text = this.Entity.Condicion.ToString();
-            this.NotaTextBox.Text = this.Entity.Nota.ToString();
+            this.DdlNota.SelectedValue = this.Entity.Nota.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace UI.Web
             comision.IDAlumno = int.Parse(this.idAlumnoTextBox.Text);
             comision.IDCurso = int.Parse(this.idCursoTextBox.Text);
             comision.Condicion = this.CondicionTextBox.Text;
-            comision.Nota = int.Parse(this.NotaTextBox.Text);
+            comision.Nota = int.Parse(this.DdlNota.SelectedValue);
 
         }
 
@@ -168,7 +168,7 @@ namespace UI.Web
             this.idAlumnoTextBox.Enabled = enable;
             this.idCursoTextBox.Enabled = enable;
             this.CondicionTextBox.Enabled = enable;
-            this.NotaTextBox.Enabled = enable;
+            this.DdlNota.Enabled = enable;
         }
 
         private void EnableFormNota()
@@ -176,7 +176,7 @@ namespace UI.Web
             this.idAlumnoTextBox.Enabled = false;
             this.idCursoTextBox.Enabled = false;
             this.CondicionTextBox.Enabled = false;
-            this.NotaTextBox.Enabled = true;
+            this.DdlNota.Enabled = true;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -208,7 +208,7 @@ namespace UI.Web
             this.idAlumnoTextBox.Text = String.Empty;
             this.idCursoTextBox.Text = String.Empty;
             this.CondicionTextBox.Text = String.Empty;
-            this.NotaTextBox.Text = String.Empty;
+            this.DdlNota.SelectedValue = null;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

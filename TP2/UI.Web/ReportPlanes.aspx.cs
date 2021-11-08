@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace UI.Web
 {
-    public partial class ReportCursos : System.Web.UI.Page
+    public partial class ReportPlanes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,12 +21,14 @@ namespace UI.Web
  
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            CursoLogic ul = new CursoLogic();
-            List<Curso> cursos = ul.GetAll();
-            ReportDataSource rds = new ReportDataSource("DataSetCursos", cursos);
-            
+            PlanLogic ul = new PlanLogic();
+            var cursos = ul.GetAll();
+            ReportDataSource rds = new ReportDataSource("DSPlanes", cursos);            
+
+            this.ReportViewer1.LocalReport.ReportEmbeddedResource = "UI.Web.ReportPlanes.rdlc";
             this.ReportViewer1.LocalReport.DataSources.Add(rds);
             this.ReportViewer1.LocalReport.Refresh();
+            this.ReportViewer1.DataBind();
         }
     }
 }

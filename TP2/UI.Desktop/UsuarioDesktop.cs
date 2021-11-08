@@ -1,6 +1,7 @@
 ﻿using Business.Entities;
 using Business.Logic;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace UI.Desktop
@@ -36,6 +37,17 @@ namespace UI.Desktop
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.txtId.Enabled = false;
+                this.chkHabilitado.Enabled = false;
+                this.txtNombre.Enabled = false;
+                this.txtEmail.Enabled = false;
+                this.txtClave.Enabled = false;
+                this.txtApellido.Enabled = false;
+                this.txtUsuario.Enabled = false;
+                this.txtConfirmarClave.Enabled = false;
+            }
         }
         public override void MapearADatos()
         {
@@ -128,7 +140,8 @@ namespace UI.Desktop
            txtEmail.Text != "" &&
            this.txtClave.Text != "" &&
            this.txtApellido.Text != "" &&
-           this.txtUsuario.Text != "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length > 7)//&& Regex.IsMatch(this.txtEmail.Text, @"/^[^\s@]+@[^\s@]+\.[^\s@]+$/"))
+           this.txtUsuario.Text != "" && this.txtClave.Text == this.txtConfirmarClave.Text && this.txtClave.Text.Length > 7 && Regex.IsMatch(this.txtEmail.Text, @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3} @\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                                 @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 //MessageBox.Show("valida ok");
                 return true;

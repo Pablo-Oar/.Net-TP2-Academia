@@ -310,11 +310,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>12348309-60fd-432b-954f-94be57156c6b</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="BusinessEntities1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>952d5154-ffe1-4db5-9e54-58d5509de0ef</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DSPlanes">
       <Query>
-        <DataSourceName>BusinessEntities</DataSourceName>
+        <DataSourceName>BusinessEntities1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>

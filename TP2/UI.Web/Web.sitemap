@@ -12,7 +12,7 @@
 	<siteMapNode url="~/Alumnos.aspx" title="Alumnos"  description="" />
 	<siteMapNode url="~/Docentes.aspx" title="Docentes"  description="" />
 	<siteMapNode url="~/ReportCursos.aspx" title="Reporte de cursos"  description="" />
-	<siteMapNode url="/#" title="Reporte de planes"  description="" />
+	<siteMapNode url="~/ReportPlanes.aspx" title="Reporte de planes"  description="" />
 	<siteMapNode url="~/Login.aspx" title="Cerrar Sesión"  description="" />	  
   </siteMapNode>
 </siteMap>

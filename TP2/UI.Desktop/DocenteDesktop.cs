@@ -43,7 +43,17 @@ namespace UI.Desktop
             this.dtpFechaNacimiento.Value = this.DocenteActual.FechaNacimiento;
             this.txtLegajo.Text = this.DocenteActual.Legajo.ToString();
             this.txtIdPlan.Text = this.DocenteActual.IDPlan.ToString();
-
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.txtDireccion.Enabled = false;
+                this.txtIdPlan.Enabled = false;
+                this.txtNombre.Enabled = false;
+                this.txtEmail.Enabled = false;
+                this.txtLegajo.Enabled = false;
+                this.txtApellido.Enabled = false;
+                this.dtpFechaNacimiento.Enabled = false;
+                this.txtTelefono.Enabled = false;
+            }
         }
 
         public override void MapearADatos()
