@@ -34,9 +34,6 @@ namespace UI.Desktop
             this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvEspecialidad = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.especialidadDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.especialidadLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -44,6 +41,8 @@ namespace UI.Desktop
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -59,7 +58,7 @@ namespace UI.Desktop
             // tcUsuarios.ContentPanel
             // 
             this.tcUsuarios.ContentPanel.Controls.Add(this.tlUsuarios);
-            this.tcUsuarios.ContentPanel.Size = new System.Drawing.Size(348, 251);
+            this.tcUsuarios.ContentPanel.Size = new System.Drawing.Size(242, 251);
             this.tcUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tcUsuarios.Name = "tcUsuarios";
@@ -67,7 +66,7 @@ namespace UI.Desktop
             // tcUsuarios.RightToolStripPanel
             // 
             this.tcUsuarios.RightToolStripPanel.Click += new System.EventHandler(this.tcUsuarios_RightToolStripPanel_Click);
-            this.tcUsuarios.Size = new System.Drawing.Size(348, 276);
+            this.tcUsuarios.Size = new System.Drawing.Size(242, 276);
             this.tcUsuarios.TabIndex = 0;
             this.tcUsuarios.Text = "toolStripContainer1";
             // 
@@ -91,7 +90,7 @@ namespace UI.Desktop
             this.tlUsuarios.RowCount = 2;
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlUsuarios.Size = new System.Drawing.Size(348, 251);
+            this.tlUsuarios.Size = new System.Drawing.Size(242, 251);
             this.tlUsuarios.TabIndex = 0;
             this.tlUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.tlUsuarios_Paint);
             // 
@@ -101,8 +100,7 @@ namespace UI.Desktop
             this.dgvEspecialidad.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvEspecialidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Descripcion,
-            this.especialidadDataDataGridViewTextBoxColumn});
+            this.Descripcion});
             this.tlUsuarios.SetColumnSpan(this.dgvEspecialidad, 2);
             this.dgvEspecialidad.DataSource = this.especialidadLogicBindingSource;
             this.dgvEspecialidad.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,31 +108,9 @@ namespace UI.Desktop
             this.dgvEspecialidad.MultiSelect = false;
             this.dgvEspecialidad.Name = "dgvEspecialidad";
             this.dgvEspecialidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidad.Size = new System.Drawing.Size(342, 216);
+            this.dgvEspecialidad.Size = new System.Drawing.Size(236, 216);
             this.dgvEspecialidad.TabIndex = 0;
             this.dgvEspecialidad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.Frozen = true;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.Frozen = true;
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // especialidadDataDataGridViewTextBoxColumn
-            // 
-            this.especialidadDataDataGridViewTextBoxColumn.DataPropertyName = "EspecialidadData";
-            this.especialidadDataDataGridViewTextBoxColumn.HeaderText = "EspecialidadData";
-            this.especialidadDataDataGridViewTextBoxColumn.Name = "especialidadDataDataGridViewTextBoxColumn";
             // 
             // especialidadLogicBindingSource
             // 
@@ -144,7 +120,7 @@ namespace UI.Desktop
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(189, 225);
+            this.btnActualizar.Location = new System.Drawing.Point(83, 225);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -155,7 +131,7 @@ namespace UI.Desktop
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(270, 225);
+            this.btnSalir.Location = new System.Drawing.Point(164, 225);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -208,11 +184,27 @@ namespace UI.Desktop
             this.tsbEliminar.ToolTipText = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.Frozen = true;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.Frozen = true;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
             // Especialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 276);
+            this.ClientSize = new System.Drawing.Size(242, 276);
             this.Controls.Add(this.tcUsuarios);
             this.Name = "Especialidades";
             this.ShowIcon = false;
@@ -247,7 +239,6 @@ namespace UI.Desktop
         private System.Windows.Forms.BindingSource especialidadLogicBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn especialidadDataDataGridViewTextBoxColumn;
     }
 }
 

@@ -143,7 +143,6 @@ namespace Data.Database
                 using (_EfConn)
                 {
                     var Alumno = _EfConn.alumnos_inscripciones.Find(alu.ID);
-                    Alumno.id_inscripcion = alu.ID;
                     Alumno.id_alumno = alu.IDAlumno;
                     Alumno.id_curso = (int)alu.IDCurso;
                     Alumno.nota = (int)alu.Nota;

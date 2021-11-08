@@ -29,8 +29,6 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIdComision = new System.Windows.Forms.Label();
-            this.txtIdComision = new System.Windows.Forms.TextBox();
             this.lblIdPlan = new System.Windows.Forms.Label();
             this.txtIdPlan = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -41,26 +39,10 @@ namespace UI.Desktop
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblIdComision
-            // 
-            this.lblIdComision.AutoSize = true;
-            this.lblIdComision.Location = new System.Drawing.Point(19, 44);
-            this.lblIdComision.Name = "lblIdComision";
-            this.lblIdComision.Size = new System.Drawing.Size(64, 13);
-            this.lblIdComision.TabIndex = 0;
-            this.lblIdComision.Text = "Id Comision:";
-            // 
-            // txtIdComision
-            // 
-            this.txtIdComision.Location = new System.Drawing.Point(89, 41);
-            this.txtIdComision.Name = "txtIdComision";
-            this.txtIdComision.Size = new System.Drawing.Size(100, 20);
-            this.txtIdComision.TabIndex = 1;
-            // 
             // lblIdPlan
             // 
             this.lblIdPlan.AutoSize = true;
-            this.lblIdPlan.Location = new System.Drawing.Point(19, 83);
+            this.lblIdPlan.Location = new System.Drawing.Point(19, 101);
             this.lblIdPlan.Name = "lblIdPlan";
             this.lblIdPlan.Size = new System.Drawing.Size(43, 13);
             this.lblIdPlan.TabIndex = 2;
@@ -68,7 +50,7 @@ namespace UI.Desktop
             // 
             // txtIdPlan
             // 
-            this.txtIdPlan.Location = new System.Drawing.Point(89, 80);
+            this.txtIdPlan.Location = new System.Drawing.Point(117, 94);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.Size = new System.Drawing.Size(100, 20);
             this.txtIdPlan.TabIndex = 3;
@@ -76,7 +58,7 @@ namespace UI.Desktop
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(222, 44);
+            this.lblDescripcion.Location = new System.Drawing.Point(19, 61);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
             this.lblDescripcion.TabIndex = 4;
@@ -84,7 +66,7 @@ namespace UI.Desktop
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(318, 41);
+            this.txtDescripcion.Location = new System.Drawing.Point(117, 54);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 5;
@@ -92,7 +74,7 @@ namespace UI.Desktop
             // lblAnioEspecialidad
             // 
             this.lblAnioEspecialidad.AutoSize = true;
-            this.lblAnioEspecialidad.Location = new System.Drawing.Point(222, 83);
+            this.lblAnioEspecialidad.Location = new System.Drawing.Point(19, 20);
             this.lblAnioEspecialidad.Name = "lblAnioEspecialidad";
             this.lblAnioEspecialidad.Size = new System.Drawing.Size(92, 13);
             this.lblAnioEspecialidad.TabIndex = 6;
@@ -100,7 +82,7 @@ namespace UI.Desktop
             // 
             // txtAñoEspecialidad
             // 
-            this.txtAñoEspecialidad.Location = new System.Drawing.Point(318, 80);
+            this.txtAñoEspecialidad.Location = new System.Drawing.Point(117, 13);
             this.txtAñoEspecialidad.Name = "txtAñoEspecialidad";
             this.txtAñoEspecialidad.Size = new System.Drawing.Size(100, 20);
             this.txtAñoEspecialidad.TabIndex = 7;
@@ -108,7 +90,7 @@ namespace UI.Desktop
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(147, 142);
+            this.btnAceptar.Location = new System.Drawing.Point(36, 141);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 8;
@@ -119,7 +101,7 @@ namespace UI.Desktop
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(239, 142);
+            this.btnCancelar.Location = new System.Drawing.Point(128, 141);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
@@ -132,7 +114,7 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(451, 176);
+            this.ClientSize = new System.Drawing.Size(242, 176);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtAñoEspecialidad);
@@ -141,8 +123,6 @@ namespace UI.Desktop
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtIdPlan);
             this.Controls.Add(this.lblIdPlan);
-            this.Controls.Add(this.txtIdComision);
-            this.Controls.Add(this.lblIdComision);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ComisionDesktop";
@@ -157,9 +137,6 @@ namespace UI.Desktop
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblIdComision;
-        private System.Windows.Forms.TextBox txtIdComision;
         private System.Windows.Forms.Label lblIdPlan;
         private System.Windows.Forms.TextBox txtIdPlan;
         private System.Windows.Forms.Label lblDescripcion;

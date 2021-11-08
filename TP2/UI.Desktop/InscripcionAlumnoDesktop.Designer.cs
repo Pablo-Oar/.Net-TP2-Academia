@@ -29,12 +29,10 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIdInscripcion = new System.Windows.Forms.Label();
             this.lblIdAlumno = new System.Windows.Forms.Label();
             this.lblCondicion = new System.Windows.Forms.Label();
             this.lblNota = new System.Windows.Forms.Label();
             this.lblIdCurso = new System.Windows.Forms.Label();
-            this.txtIdInscripcion = new System.Windows.Forms.TextBox();
             this.txtIdAlumno = new System.Windows.Forms.TextBox();
             this.txtIdCurso = new System.Windows.Forms.TextBox();
             this.txtCondicion = new System.Windows.Forms.TextBox();
@@ -43,19 +41,10 @@ namespace UI.Desktop
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblIdInscripcion
-            // 
-            this.lblIdInscripcion.AutoSize = true;
-            this.lblIdInscripcion.Location = new System.Drawing.Point(22, 26);
-            this.lblIdInscripcion.Name = "lblIdInscripcion";
-            this.lblIdInscripcion.Size = new System.Drawing.Size(78, 13);
-            this.lblIdInscripcion.TabIndex = 0;
-            this.lblIdInscripcion.Text = "ID Inscripción: ";
-            // 
             // lblIdAlumno
             // 
             this.lblIdAlumno.AutoSize = true;
-            this.lblIdAlumno.Location = new System.Drawing.Point(22, 69);
+            this.lblIdAlumno.Location = new System.Drawing.Point(26, 29);
             this.lblIdAlumno.Name = "lblIdAlumno";
             this.lblIdAlumno.Size = new System.Drawing.Size(62, 13);
             this.lblIdAlumno.TabIndex = 1;
@@ -82,29 +71,22 @@ namespace UI.Desktop
             // lblIdCurso
             // 
             this.lblIdCurso.AutoSize = true;
-            this.lblIdCurso.Location = new System.Drawing.Point(22, 118);
+            this.lblIdCurso.Location = new System.Drawing.Point(26, 78);
             this.lblIdCurso.Name = "lblIdCurso";
             this.lblIdCurso.Size = new System.Drawing.Size(54, 13);
             this.lblIdCurso.TabIndex = 4;
             this.lblIdCurso.Text = "ID Curso: ";
             // 
-            // txtIdInscripcion
-            // 
-            this.txtIdInscripcion.Location = new System.Drawing.Point(107, 26);
-            this.txtIdInscripcion.Name = "txtIdInscripcion";
-            this.txtIdInscripcion.Size = new System.Drawing.Size(113, 20);
-            this.txtIdInscripcion.TabIndex = 5;
-            // 
             // txtIdAlumno
             // 
-            this.txtIdAlumno.Location = new System.Drawing.Point(107, 66);
+            this.txtIdAlumno.Location = new System.Drawing.Point(111, 26);
             this.txtIdAlumno.Name = "txtIdAlumno";
             this.txtIdAlumno.Size = new System.Drawing.Size(113, 20);
             this.txtIdAlumno.TabIndex = 6;
             // 
             // txtIdCurso
             // 
-            this.txtIdCurso.Location = new System.Drawing.Point(107, 111);
+            this.txtIdCurso.Location = new System.Drawing.Point(111, 71);
             this.txtIdCurso.Name = "txtIdCurso";
             this.txtIdCurso.Size = new System.Drawing.Size(113, 20);
             this.txtIdCurso.TabIndex = 7;
@@ -139,7 +121,7 @@ namespace UI.Desktop
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(149, 148);
+            this.btnAceptar.Location = new System.Drawing.Point(149, 121);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 10;
@@ -150,7 +132,7 @@ namespace UI.Desktop
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(243, 148);
+            this.btnCancelar.Location = new System.Drawing.Point(243, 121);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
@@ -163,19 +145,17 @@ namespace UI.Desktop
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(457, 183);
+            this.ClientSize = new System.Drawing.Size(457, 152);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbNota);
             this.Controls.Add(this.txtCondicion);
             this.Controls.Add(this.txtIdCurso);
             this.Controls.Add(this.txtIdAlumno);
-            this.Controls.Add(this.txtIdInscripcion);
             this.Controls.Add(this.lblIdCurso);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.lblCondicion);
             this.Controls.Add(this.lblIdAlumno);
-            this.Controls.Add(this.lblIdInscripcion);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InscripcionAlumnoDesktop";
@@ -189,13 +169,10 @@ namespace UI.Desktop
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblIdInscripcion;
         private System.Windows.Forms.Label lblIdAlumno;
         private System.Windows.Forms.Label lblCondicion;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Label lblIdCurso;
-        private System.Windows.Forms.TextBox txtIdInscripcion;
         private System.Windows.Forms.TextBox txtIdAlumno;
         private System.Windows.Forms.TextBox txtIdCurso;
         private System.Windows.Forms.TextBox txtCondicion;
