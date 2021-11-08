@@ -177,39 +177,12 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.LinkButton cancelarLinkButton;
 
         /// <summary>
-        /// Control gridActionsPanel.
+        /// Control UCBotones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel gridActionsPanel;
-
-        /// <summary>
-        /// Control editarLinkButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
-
-        /// <summary>
-        /// Control eliminarLinkButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton eliminarLinkButton;
-
-        /// <summary>
-        /// Control nuevoLinkButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton nuevoLinkButton;
+        protected global::UI.Web.UCBotones UCBotones;
     }
 }

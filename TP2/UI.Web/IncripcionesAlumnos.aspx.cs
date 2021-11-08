@@ -109,7 +109,7 @@ namespace UI.Web
         {
             if (this.IsEntitySelected)
             {
-                this.EnableForm(true);
+                this.EnableModificacion();
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Moficacion;
                 this.LoadForm(this.SelectedID);
@@ -149,8 +149,17 @@ namespace UI.Web
                 case FormModes.Alta:
                     this.Entity = new AlumnoInscripcion();
                     this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
+                    CursoLogic cl = new CursoLogic();
+                    CursoLogic cl2 = new CursoLogic();
+                    Curso cur = cl.GetOne(Entity.IDCurso);
+                    if (cur.Cupo > 0)
+                    {
+                        cur.State = BusinessEntity.States.Modified;
+                        cur.Cupo = cur.Cupo - 1;
+                        cl2.Save(cur);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                    }
                     break;
                 default:
                     break;
@@ -169,6 +178,14 @@ namespace UI.Web
             this.idCursoTextBox.Enabled = enable;
             this.CondicionTextBox.Enabled = enable;
             this.DdlNota.Enabled = enable;
+        }
+
+        private void EnableModificacion()
+        {
+            this.idAlumnoTextBox.Enabled = true;
+            this.idCursoTextBox.Enabled = false;
+            this.CondicionTextBox.Enabled = true;
+            this.DdlNota.Enabled = true;
         }
 
         private void EnableFormNota()

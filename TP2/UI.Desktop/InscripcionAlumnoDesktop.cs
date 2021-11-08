@@ -46,8 +46,7 @@ namespace UI.Desktop
             if (this.Modo == ModoForm.Modificacion)
             {
                 this.txtIdCurso.Enabled = false;
-            }
-        }
+            }        
             if (this.Modo == ModoForm.Baja)
             {
             this.txtIdAlumno.Enabled=false;
@@ -64,7 +63,6 @@ namespace UI.Desktop
                 this.btnAceptar.Text = "Guardar";
                 AlumnoInscripcion newAluInscripcion = new AlumnoInscripcion();
                 InscripcionAlumnoActual = newAluInscripcion;
-                MessageBox.Show("Inscripcion a Alumno creada");
 
             }
             if (this.Modo == ModoForm.Baja)
@@ -108,11 +106,13 @@ namespace UI.Desktop
             {
                 this.MapearADatos();
                 CursoLogic cl = new CursoLogic();
+                CursoLogic cl2 = new CursoLogic();
                 Curso cur = cl.GetOne(InscripcionAlumnoActual.IDCurso);
                 if (cur.Cupo > 0)
-                {
+                {   
+                    cur.State = BusinessEntity.States.Modified;
                     cur.Cupo = cur.Cupo - 1;
-                    cl.Save(cur);
+                    cl2.Save(cur);
                     AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
                     ail.Save(this.InscripcionAlumnoActual);
                 }
@@ -130,10 +130,12 @@ namespace UI.Desktop
             else if (this.Modo == ModoForm.Baja)
             {
                 CursoLogic cl = new CursoLogic();
+                CursoLogic cl2 = new CursoLogic();
                 Curso cur = cl.GetOne(InscripcionAlumnoActual.IDCurso);
                 this.MapearADatos();
                 cur.Cupo = cur.Cupo + 1;
-                cl.Save(cur);
+                cur.State = BusinessEntity.States.Modified;
+                cl2.Save(cur);
                 AlumnoInscripcionLogic ail = new AlumnoInscripcionLogic();
                 ail.Save(this.InscripcionAlumnoActual);
             }

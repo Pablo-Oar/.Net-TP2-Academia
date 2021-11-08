@@ -155,7 +155,6 @@
     <Content Include="Home.aspx" />
     <Content Include="ReportPlanes.aspx" />
     <Content Include="ReportCursos.aspx" />
-    <Content Include="WebUserControl1.ascx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -198,6 +197,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UCBotones.ascx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -319,6 +319,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UCBotones.ascx.cs">
+      <DependentUpon>UCBotones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UCBotones.ascx.designer.cs">
+      <DependentUpon>UCBotones.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -346,13 +353,6 @@
     </Compile>
     <Compile Include="ReportCursos.aspx.designer.cs">
       <DependentUpon>ReportCursos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebUserControl1.ascx.cs">
-      <DependentUpon>WebUserControl1.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebUserControl1.ascx.designer.cs">
-      <DependentUpon>WebUserControl1.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

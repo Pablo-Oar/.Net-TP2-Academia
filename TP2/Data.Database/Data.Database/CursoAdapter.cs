@@ -170,7 +170,6 @@ namespace Data.Database
                 using (_EfConn)
                 {
                     var Cur = new cursos();
-                    Cur.id_curso = cu.ID;
                     Cur.anio_calendario = cu.AnioCalendario;
                     Cur.cupo = cu.Cupo;
                     Cur.id_comision = cu.IDComision;
