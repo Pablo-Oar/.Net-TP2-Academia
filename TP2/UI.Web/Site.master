@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Academia</title>
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
 </head>
 <body style="background-color:lightgray">
     <form id="bodyForm" runat="server">

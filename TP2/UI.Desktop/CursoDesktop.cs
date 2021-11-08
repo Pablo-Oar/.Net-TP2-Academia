@@ -40,6 +40,13 @@ namespace UI.Desktop
             this.txtIdComision.Text = this.CursoActual.IDComision.ToString();
             this.txtCupo.Text = this.CursoActual.Cupo.ToString();
             this.txtAnioCalendario.Text = this.CursoActual.AnioCalendario.ToString();
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.txtIdMateria.Enabled = false;
+                this.txtIdComision.Enabled = false;
+                this.txtCupo.Enabled = false;
+                this.txtAnioCalendario.Enabled = false;
+            }
         }
 
         public override void MapearADatos()

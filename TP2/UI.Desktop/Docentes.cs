@@ -75,7 +75,7 @@ namespace UI.Desktop
         {
             if (this.dgvDocentes.SelectedRows.Count > 0)
             {
-                int ID = ((Business.Entities.DocenteCurso)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
+                int ID = ((Business.Entities.Personas)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
                 DocenteDesktop DD = new DocenteDesktop(ID, ApplicationForm.ModoForm.Baja);
                 DD.ShowDialog();
                 this.Listar();

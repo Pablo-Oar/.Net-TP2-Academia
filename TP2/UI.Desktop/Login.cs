@@ -35,15 +35,14 @@ namespace UI.Desktop
                 this.txtUsuario.Clear();
                 this.txtContraseña.Clear();
                 usuarioLogueado = usu; //Seteo el usuario logueado que se realizo de forma correcta! 
-                Main main = new Main(usu);
-                main.ShowDialog();
-                
+                Main main = Main.ObtenerMain(usu);
+                main.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Usuario y/o contraseña incorrectos", "Error de logueo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            this.Close();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

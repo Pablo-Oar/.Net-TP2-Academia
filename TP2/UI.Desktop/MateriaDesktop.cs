@@ -39,6 +39,13 @@ namespace UI.Desktop
             this.txtHsTotales.Text = this.MateriaActual.HSTotales.ToString();
             this.txtIDPlan.Text = this.MateriaActual.IDPlan.ToString();
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.txtHsSemanales.Enabled = false;
+                this.txtHsTotales.Enabled = false;
+                this.txtIDPlan.Enabled = false;
+                this.txtDescripcion.Enabled = false;
+            }
         }
 
 

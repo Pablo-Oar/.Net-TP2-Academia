@@ -38,6 +38,11 @@ namespace UI.Desktop
         {
             this.txtIdEspecialidad.Text = this.EspecialidadActual.ID.ToString();
             this.txtDescripcion.Text = this.EspecialidadActual.Descripcion;
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.txtIdEspecialidad.Enabled = false;
+                this.txtDescripcion.Enabled = false;
+            }
         }
 
         public override void MapearADatos()

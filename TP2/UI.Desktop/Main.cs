@@ -6,15 +6,27 @@ namespace UI.Desktop
 {
     public partial class Main : Form
     {
-        public Main()
+        private static Main mainSingleton;
+        private Main()
         {
             InitializeComponent();
+
         }
 
-        public Main(Usuario usu)
+        private Main(Usuario usu)
         {
             InitializeComponent();
             this.lblBienvenido.Text = "¡¡Bienvenido al Sistema Gestion de Academia!! \n" + usu.Nombre + ", " + usu.Apellido;
+        }
+
+        public static Main ObtenerMain(Usuario usu)
+        {
+
+            if(mainSingleton == null)
+            {
+                mainSingleton = new Main(usu);
+            }
+            return mainSingleton;
         }
 
         private void mnuUsuarios_Click(object sender, EventArgs e)
@@ -81,6 +93,11 @@ namespace UI.Desktop
         {
             PlanesReport pla = new PlanesReport();
             pla.ShowDialog();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

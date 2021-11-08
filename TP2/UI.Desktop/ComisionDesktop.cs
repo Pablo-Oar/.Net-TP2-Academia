@@ -38,6 +38,12 @@ namespace UI.Desktop
             this.txtIdPlan.Text = this.ComisionActual.IdPlan.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion.ToString();
             this.txtAñoEspecialidad.Text = this.ComisionActual.AñoEspecialidad.ToString();
+            if (this.Modo == ModoForm.Baja)
+            {
+                this.txtIdPlan.Enabled = false;
+                this.txtDescripcion.Enabled = false;
+                this.txtAñoEspecialidad.Enabled = false;
+            }
         }
 
         public override void MapearADatos()
