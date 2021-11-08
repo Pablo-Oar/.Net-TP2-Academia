@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Business.Logic;
+using Util;
 
 namespace UI.Desktop
 {
@@ -143,8 +144,8 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            if (this.txtNombre.Text != "" && this.txtEmail.Text != "" && this.txtDireccion.Text != "" && this.txtApellido.Text != "" &&
-                this.txtIdPlan.Text != "" && this.txtLegajo.Text != "" &&this.txtTelefono.Text != "" && this.dtsFechaNacimiento.Text != "")
+            string[] ar = { this.txtNombre.Text, this.txtEmail.Text, this.txtDireccion.Text, this.txtApellido.Text, this.txtIdPlan.Text, this.txtLegajo.Text, this.txtTelefono.Text, this.dtsFechaNacimiento.Text };
+            if (MetodosUtiles.validaNotEmpty(ar))
             {
                 //MessageBox.Show("valida ok");
                 return true;
