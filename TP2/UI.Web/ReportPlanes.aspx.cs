@@ -14,8 +14,19 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
+            var user = ((UsuarioPersona)HttpContext.Current.Session["current_user"]);
+            if (user == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (user.TipoPersona == UsuarioPersona.TiposPersonas.Alumno)
+            {
+                Response.Redirect("Home.aspx");
+            }
+            if (user.TipoPersona == UsuarioPersona.TiposPersonas.Docente)
+            {
+                Response.Redirect("Home.aspx");
+            }
         }
 
  

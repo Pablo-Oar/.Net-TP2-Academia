@@ -12,7 +12,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public Usuario usuarioLogueado //Seteado cuando el logueo del usuario es exitoso! 
+        public UsuarioPersona usuarioLogueado //Seteado cuando el logueo del usuario es exitoso! 
         {
             get; set;
         }
@@ -20,7 +20,7 @@ namespace UI.Desktop
         private void btnIngresar_Click_1(object sender, EventArgs e)
         {
             UsuarioLogic ul = new UsuarioLogic();
-            Usuario usu = new Usuario();
+            UsuarioPersona usu = new UsuarioPersona();
             try
             {
                 usu = ul.LogIn(txtUsuario.Text, txtContraseña.Text);

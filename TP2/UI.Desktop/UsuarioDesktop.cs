@@ -37,6 +37,7 @@ namespace UI.Desktop
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+            this.tbIdPersona.Text = this.UsuarioActual.IdPerosna.ToString();
             if (this.Modo == ModoForm.Baja)
             {
                 this.txtId.Enabled = false;
@@ -47,6 +48,7 @@ namespace UI.Desktop
                 this.txtApellido.Enabled = false;
                 this.txtUsuario.Enabled = false;
                 this.txtConfirmarClave.Enabled = false;
+                this.tbIdPersona.Enabled = false;
             }
         }
         public override void MapearADatos()
@@ -56,7 +58,7 @@ namespace UI.Desktop
                 this.btnAceptar.Text = "Guardar";
                 Usuario newUser = new Usuario();
                 UsuarioActual = newUser;
-                MessageBox.Show("creado nuevo usuario");
+               
             }
             if (this.Modo == ModoForm.Baja)
             {
@@ -80,7 +82,7 @@ namespace UI.Desktop
             this.UsuarioActual.Clave = this.txtClave.Text;
             this.UsuarioActual.Apellido = this.txtApellido.Text;
             this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-            this.UsuarioActual.IdPerosna = 7 ;
+            this.UsuarioActual.IdPerosna = int.Parse(this.tbIdPersona.Text);
             if (this.Modo == ModoForm.Alta)
             {
                 this.UsuarioActual.State = Usuario.States.New;
@@ -97,7 +99,6 @@ namespace UI.Desktop
             {
                 this.UsuarioActual.State = Usuario.States.Unmodified;
             }
-
         }
         public override void GuardarCambios()
         {
@@ -106,6 +107,7 @@ namespace UI.Desktop
                 this.MapearADatos();
                 UsuarioLogic ul = new UsuarioLogic();
                 ul.Save(this.UsuarioActual);
+                MessageBox.Show("creado nuevo usuario");
             }
             else if (this.Modo == ModoForm.Modificacion)
             {
@@ -136,7 +138,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (this.txtNombre.Text != "" &&
+            if (this.txtNombre.Text != "" && this.tbIdPersona.Text != "" &&
            txtEmail.Text != "" &&
            this.txtClave.Text != "" &&
            this.txtApellido.Text != "" &&

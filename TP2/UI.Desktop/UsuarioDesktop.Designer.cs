@@ -47,6 +47,8 @@ namespace UI.Desktop
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.LblIdPersona = new System.Windows.Forms.Label();
+            this.tbIdPersona = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@ namespace UI.Desktop
             // 
             this.btnAceptar.BackColor = System.Drawing.SystemColors.Window;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(75, 211);
+            this.btnAceptar.Location = new System.Drawing.Point(361, 211);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 3;
@@ -216,6 +218,8 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.23182F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.34568F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.32991F));
+            this.tableLayoutPanel1.Controls.Add(this.LblIdPersona, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tbIdPersona, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblId, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 2);
@@ -244,6 +248,23 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Size = new System.Drawing.Size(729, 252);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // LblIdPersona
+            // 
+            this.LblIdPersona.AutoSize = true;
+            this.LblIdPersona.Location = new System.Drawing.Point(3, 208);
+            this.LblIdPersona.Name = "LblIdPersona";
+            this.LblIdPersona.Size = new System.Drawing.Size(45, 26);
+            this.LblIdPersona.TabIndex = 4;
+            this.LblIdPersona.Text = "id de persona";
+            // 
+            // tbIdPersona
+            // 
+            this.tbIdPersona.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbIdPersona.Location = new System.Drawing.Point(75, 211);
+            this.tbIdPersona.Name = "tbIdPersona";
+            this.tbIdPersona.Size = new System.Drawing.Size(280, 20);
+            this.tbIdPersona.TabIndex = 5;
             // 
             // UsuarioDesktop
             // 
@@ -284,5 +305,7 @@ namespace UI.Desktop
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label LblIdPersona;
+        private System.Windows.Forms.TextBox tbIdPersona;
     }
 }

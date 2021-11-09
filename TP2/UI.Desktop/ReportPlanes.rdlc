@@ -6,18 +6,18 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>4.75778cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>4.75778cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>4.75778cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.9175cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -112,7 +112,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.9175cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -226,10 +226,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSPlanes</DataSetName>
-        <Top>1.42557cm</Top>
-        <Left>4.30953cm</Left>
-        <Height>1.2cm</Height>
-        <Width>7.5cm</Width>
+        <Top>0.79057cm</Top>
+        <Left>1.39911cm</Left>
+        <Height>1.835cm</Height>
+        <Width>14.27333cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -255,26 +255,22 @@
               <TextRuns>
                 <TextRun>
                   <Value>Informe de planes</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style />
+                  <Style>
+                    <FontSize>40pt</FontSize>
+                    <FontWeight>SemiBold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
+                    <Color>Blue</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox15</rd:DefaultName>
-          <Top>0.79057cm</Top>
-          <Left>4.89162cm</Left>
-          <Height>0.6cm</Height>
-          <Width>9.35271cm</Width>
+          <Top>0.48189cm</Top>
+          <Left>2.06058cm</Left>
+          <Height>1.6436cm</Height>
+          <Width>12.43859cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

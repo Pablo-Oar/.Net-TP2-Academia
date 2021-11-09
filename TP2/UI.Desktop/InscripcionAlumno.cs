@@ -15,12 +15,18 @@ namespace UI.Desktop
     public partial class InscripcionAlumno : ApplicationForm
     {
         private AlumnoInscripcionLogic _oAlumnos;
-        public InscripcionAlumno()
+        public InscripcionAlumno(UsuarioPersona usu)
         {
             InitializeComponent();
             this.dgvAlumnos.AutoGenerateColumns = false;
             this.oAlumnos = new AlumnoInscripcionLogic();
             this.dgvAlumnos.DataSource = this.oAlumnos.GetAll();
+            if(usu.TipoPersona == UsuarioPersona.TiposPersonas.Alumno)
+            {
+                tsbEditar.Visible = false;
+                tsbEliminar.Visible = false;
+                TsbNota.Visible = false;
+            }
         }
 
         public void Listar()

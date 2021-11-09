@@ -13,7 +13,7 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var us = ((Usuario)HttpContext.Current.Session["current_user"]);
+            var us = ((UsuarioPersona)HttpContext.Current.Session["current_user"]);
             if (us != null)
             {
                 Session["current_user"] = null;
@@ -25,7 +25,7 @@ namespace UI.Web
         {
            
                 UsuarioLogic ul = new UsuarioLogic();
-                Usuario user = ul.LogIn(UsuarioTextBox.Text, ClaveTextBox.Text);
+                UsuarioPersona user = ul.LogIn(UsuarioTextBox.Text, ClaveTextBox.Text);
                 if (user.Nombre != null && user.Nombre != "")
                 {
                     Session["current_user"] = user;

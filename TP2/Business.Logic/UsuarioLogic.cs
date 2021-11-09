@@ -47,11 +47,20 @@ namespace Business.Logic
             UsuarioData.Save(User);
         }
 
-        public Usuario LogIn(string nombreUsuario, string contraseña)
+        public UsuarioPersona LogIn(string nombreUsuario, string contraseña)
         {
             try
             {
-                Usuario usu = UsuarioData.LogIn(nombreUsuario, contraseña);
+                UsuarioPersona usu = UsuarioData.LogIn(nombreUsuario, contraseña);
+                PersonasLogic pl = new PersonasLogic();
+                Personas per = pl.GetOne(usu.IdPerosna);
+                usu.TipoPersona = (UsuarioPersona.TiposPersonas)per.TipoPersona;
+                usu.Direccion = per.Direccion;
+                usu.IDPlan = per.IDPlan;
+                usu.Legajo = per.Legajo;
+                usu.Telefono = per.Telefono;
+                usu.FechaNacimiento = per.FechaNacimiento;
+                usu.Direccion = per.Direccion;
                 return usu;
             }
             catch (Exception Ex)

@@ -15,6 +15,11 @@ namespace UI.Web
         private AlumnoInscripcion _entity;
         protected void Page_Load(object sender, EventArgs e)
         {
+            var user = ((UsuarioPersona)HttpContext.Current.Session["current_user"]);
+            if (user == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             if (!IsPostBack)
             {
                 LoadGrid();

@@ -82,41 +82,7 @@ namespace Data.Database
             }
             return usr;
         }
-
-        public Usuario Login(string us, string pw)
-        {
-            Usuario usr = new Usuario();
-            try
-            {
-                this.OpenConnection();
-                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE usuarios.nombre_usuario = 'sdsds1233332' and usuarios.clave = 'nanusongo';", SqlConn);
-                cmdUsuarios.Parameters.AddWithValue("@nus", us);
-                cmdUsuarios.Parameters.AddWithValue("@clave", pw);
-                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-                if (drUsuarios.Read())
-                {
-                    usr.ID = (int)drUsuarios["id_usuario"];
-                    usr.IdPerosna = (int)drUsuarios["id_persona"];
-                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    usr.Clave = (string)drUsuarios["clave"];
-                    usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    usr.Nombre = (string)drUsuarios["nombre"];
-                    usr.Apellido = (string)drUsuarios["apellido"];
-                    usr.EMail = (string)drUsuarios["email"];
-                }
-                drUsuarios.Close();
-            }
-            catch (Exception Ex)
-            {
-                Exception ExcepcionDatosUsuario = new Exception("usuario o contraseña incorrectos", Ex);
-                throw ExcepcionDatosUsuario;
-            }
-            finally
-            {
-                this.CloseConnection();
-            }
-            return usr;
-        }
+        
 
         public void Delete(int ID)
         {
@@ -212,9 +178,9 @@ namespace Data.Database
             usuario.State = BusinessEntity.States.Unmodified;
         }
 
-        public Usuario LogIn(string nombreUsuario, string contrasena)
+        public UsuarioPersona LogIn(string nombreUsuario, string contrasena)
         {
-            Usuario user = new Usuario();
+            UsuarioPersona user = new UsuarioPersona();
             try
             {
                 this.OpenConnection();
@@ -230,7 +196,7 @@ namespace Data.Database
                     user.Habilitado = (bool)drUsuarios["habilitado"];
                     user.Nombre = (string)drUsuarios["nombre"];
                     user.Apellido = (string)drUsuarios["apellido"];
-                    user.EMail = (string)drUsuarios["email"];
+                    user.Email = (string)drUsuarios["email"];
                     user.IdPerosna = (int)drUsuarios["id_persona"];
                 }
             }

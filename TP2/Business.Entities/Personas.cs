@@ -8,9 +8,9 @@ namespace Business.Entities
 {
     public class Personas:BusinessEntity
     {
-        private string _Nombre;
-        private string _Apellido;
-        private string _Email;
+        private string _Nombre;//
+        private string _Apellido;//
+        private string _Email;//
         private string _Direccion;
         private int _IDPlan;
         private int _Legajo;

@@ -6,6 +6,7 @@ namespace UI.Desktop
 {
     public partial class Main : Form
     {
+        private UsuarioPersona userlogged;
         private static Main mainSingleton;
         private Main()
         {
@@ -13,13 +14,46 @@ namespace UI.Desktop
 
         }
 
-        private Main(Usuario usu)
+        private Main(UsuarioPersona usu)
         {
             InitializeComponent();
+            userlogged = usu;
             this.lblBienvenido.Text = "¡¡Bienvenido al Sistema Gestion de Academia!! \n" + usu.Nombre + ", " + usu.Apellido;
+            this.LblTipo.Text = "Permisos: " + usu.TipoPersona.ToString();
+            switch (usu.TipoPersona)
+            {
+                case UsuarioPersona.TiposPersonas.Admin:
+                break;
+                case UsuarioPersona.TiposPersonas.Alumno:
+                    mnuInscripcionesAlumnos.Visible = true;
+                    mnuUsuarios.Visible = false;
+                    alumnosToolStripMenuItem.Visible = false;
+                    docentesToolStripMenuItem.Visible = false;
+                    mnuCursos.Visible = false;
+                    mnuMaterias.Visible = false;
+                    mnuComisiones.Visible = false;
+                    mnuPlanes.Visible = false;
+                    mnuEspecialidades.Visible = false;
+                    mnuReportes.Visible = false;
+                    reporteDePlanesToolStripMenuItem.Visible = false;
+                break;
+                case UsuarioPersona.TiposPersonas.Docente:
+                    mnuInscripcionesAlumnos.Visible = true;
+                    mnuUsuarios.Visible = false;
+                    alumnosToolStripMenuItem.Visible = false;
+                    docentesToolStripMenuItem.Visible = true;
+                    mnuCursos.Visible = true;
+                    mnuMaterias.Visible = false;
+                    mnuComisiones.Visible = false;
+                    mnuPlanes.Visible = false;
+                    mnuEspecialidades.Visible = false;
+                    mnuReportes.Visible = false;
+                    reporteDePlanesToolStripMenuItem.Visible = false;
+                break;
+            }
         }
 
-        public static Main ObtenerMain(Usuario usu)
+        public static Main ObtenerMain(UsuarioPersona usu)
         {
 
             if(mainSingleton == null)
@@ -67,7 +101,7 @@ namespace UI.Desktop
 
         private void mnuInscripcionesAlumnos_Click(object sender, EventArgs e)
         {
-            InscripcionAlumno frmInscripcionAlumnos = new InscripcionAlumno();
+            InscripcionAlumno frmInscripcionAlumnos = new InscripcionAlumno(userlogged);
             frmInscripcionAlumnos.ShowDialog();
         }
 
@@ -98,6 +132,11 @@ namespace UI.Desktop
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

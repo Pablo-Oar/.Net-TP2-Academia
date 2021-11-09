@@ -12,7 +12,7 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var user = ((Usuario)HttpContext.Current.Session["current_user"]);
+            var user = ((UsuarioPersona)HttpContext.Current.Session["current_user"]);
             if (user != null)
             {
                 LblNombre.Text = user.Nombre;

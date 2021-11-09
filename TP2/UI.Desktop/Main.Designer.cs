@@ -43,6 +43,7 @@ namespace UI.Desktop
             this.mnuInscripcionesAlumnos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePlanesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LblTipo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,12 +168,22 @@ namespace UI.Desktop
             this.reporteDePlanesToolStripMenuItem.Text = "Reporte de planes";
             this.reporteDePlanesToolStripMenuItem.Click += new System.EventHandler(this.reporteDePlanesToolStripMenuItem_Click);
             // 
+            // LblTipo
+            // 
+            this.LblTipo.AutoSize = true;
+            this.LblTipo.Location = new System.Drawing.Point(14, 25);
+            this.LblTipo.Name = "LblTipo";
+            this.LblTipo.Size = new System.Drawing.Size(83, 13);
+            this.LblTipo.TabIndex = 6;
+            this.LblTipo.Text = "Tipo de usuario:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(585, 279);
+            this.Controls.Add(this.LblTipo);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -183,6 +194,7 @@ namespace UI.Desktop
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Academia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -206,5 +218,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDePlanesToolStripMenuItem;
+        private System.Windows.Forms.Label LblTipo;
     }
 }
